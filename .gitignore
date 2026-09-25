@@ -1,0 +1,9 @@
+# Local validation dependencies and Python cache
+/.deps/
+/.venv/
+__pycache__/
+*.pyc
+
+# Generated submission archives
+/dist/
+*.zip

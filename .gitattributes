@@ -1,0 +1,2 @@
+# Artifact SHA-256 values bind exact bytes; Git must not normalize line endings.
+/contracts/artifacts/** -text
