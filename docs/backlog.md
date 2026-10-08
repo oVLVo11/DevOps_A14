@@ -26,9 +26,9 @@
 | A14-E4-02 | 容器与依赖固定 | 刘威 | Dockerfile固定digest、锁文件带哈希、工具链可导出 | DONE_LOCAL |
 | A14-E4-03 | Compose与一键命令 | 刘威 | 资源限制、无网络、SYS_PTRACE及make all链路完整 | DONE_LOCAL |
 | A14-E4-04 | 密钥隔离与扫描 | 刘威 | .env不入库/镜像，工作区、历史与镜像可扫描 | DONE_LOCAL |
-| A14-E4-05 | 课程服务器首次运行 | 刘威 | doctor/build/test/smoke/scan全部通过并保存证据 | WAITING_SERVER_ACCESS |
-| A14-E4-06 | 第二份独立克隆重跑 | 刘威 | 同一SHA重跑，工具链和结论一致或差异有解释 | WAITING_SERVER_ACCESS |
-| A14-E4-07 | E4证据发布与交接 | 刘威 | 选择证据、验证摘要、完整SHA与交付包已发布 | BLOCKED_BY_E4-05-06 |
+| A14-E4-05 | 课程服务器首次运行 | 刘威 | doctor/build/test/smoke/scan全部通过并保存证据 | DONE_REAL |
+| A14-E4-06 | 第二份独立克隆重跑 | 刘威 | 同一SHA重跑，工具链和结论一致或差异有解释 | DONE_REAL_SAME_OPERATOR |
+| A14-E4-07 | E4证据发布与交接 | 刘威 | 选择证据、验证摘要、完整SHA与交付包已发布 | DONE |
 | A14-LATER-01 | BuildChecker实际图、声明图与自动MD/RD推断 | A14 | 真实检测结果与E3人工答案对照 | DEFERRED_TO_LATER_MILESTONE |
 | A14-LATER-02 | EChecker跨提交增量检测 | A14 | 基于C0图检测C1/C2并输出变化 | DEFERRED_TO_LATER_MILESTONE |
 | A14-E12-01 | 接入B14真实数据与MDFixer重检闭环 | A14/B14 | 真实DRAFT输入、MD交接、patch重检闭环 | DEFERRED_TO_E12 |
@@ -38,4 +38,4 @@
 - A14 不负责 Moodle 或课程平台最终提交；仓库地址、commit SHA 和 ZIP 由课程提交负责人继续使用。
 - 后续EChecker实现需决定历史构建命令快照是内部持久化还是升级契约公开`build_commands_uri`。
 - E3证据来自WSL2原生Linux进程；容器内系统调用跟踪权限留到后续服务实现阶段确认。
-- E4正式验收仍需课程分配的Ubuntu服务器地址、登录账号及安全的认证方式；密码不得写入仓库或文档。
+- E4两次服务器运行均由刘威在独立克隆中完成；若教师严格要求不同组员亲自重跑，仍需金凌或庄一凡补充其本人操作证据。

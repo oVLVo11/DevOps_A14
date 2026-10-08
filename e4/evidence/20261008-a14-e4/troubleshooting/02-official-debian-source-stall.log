@@ -1,0 +1,29 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+#1 [internal] load local bake definitions
+#1 reading from stdin 578B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.33kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 106B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 858B done
+#5 DONE 0.0s
+
+#6 [1/8] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#6 resolve m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done
+#6 CACHED
+
+#7 [2/8] RUN apt-get update  && apt-get install -y --no-install-recommends gcc make libc6-dev strace git  && rm -rf /var/lib/apt/lists/*  && dpkg-query -W -f='${Package}=${Version}\n' gcc make libc6-dev strace git > /opt/toolchain.lock  && echo "python3=$(python3 -c 'import platform; print(platform.python_version())')" >> /opt/toolchain.lock  && echo "arch=$(dpkg --print-architecture)" >> /opt/toolchain.lock
+#7 0.571 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#7 1.736 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#7 2.317 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#7 2.887 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]

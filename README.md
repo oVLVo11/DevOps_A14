@@ -18,6 +18,7 @@ A14 负责将本组成果 commit 并 push 到 A14 GitHub 仓库；A14 不负责�
 
 - [A14 E4可重复工程环境](e4/README.md)
 - [A14 E4交付说明](e4/A14_E4交付说明.md)
+- [A14 E4服务器验证记录](e4/验证记录_20261008.md)
 - [A14 E3测试基线](e3/README.md)
 - [A14 E3交付说明](e3/A14_E3交付说明.md)
 - [A14 E3验证记录](e3/验证记录_20261008.md)
@@ -62,6 +63,12 @@ E4需要课程分配的Ubuntu服务器与Docker。每名操作者只设置仓库
 git config --local user.name 241880223
 git config --local user.email 1211667299@qq.com
 make all
+```
+
+已提交的E4服务器证据可离线复核：
+
+```sh
+python3 e4/scripts/verify_evidence.py e4/evidence/20261008-a14-e4
 ```
 
 ## 阶段边界

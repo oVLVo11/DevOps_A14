@@ -1,0 +1,15 @@
+name: buildchecker
+services:
+  buildchecker:
+    build:
+      context: /root/241880223-rerun/buildchecker
+      dockerfile: services/buildchecker/Dockerfile
+    cap_add:
+      - SYS_PTRACE
+    cpus: 2
+    image: e4-buildchecker:241880223
+    mem_limit: "1073741824"
+    network_mode: none
+    pids_limit: 256
+    security_opt:
+      - no-new-privileges:true

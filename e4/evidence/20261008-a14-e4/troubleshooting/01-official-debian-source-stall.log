@@ -1,0 +1,75 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+#1 [internal] load local bake definitions
+#1 reading from stdin 578B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.33kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#3 DONE 3.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 106B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 7.69kB done
+#5 DONE 0.0s
+
+#6 [1/8] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#6 resolve m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done
+#6 sha256:cf5110b4fa79118f46753653b48979bacfb64a8c795489a129cf6da712e6603e 0B / 249B 0.2s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 0B / 11.89MB 0.2s
+#6 sha256:9970f4c20ff16c00981dddbf196b2a36b5b3c1a0e30e106f4f422379bbfed24c 0B / 1.29MB 0.2s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 0B / 29.79MB 0.2s
+#6 sha256:cf5110b4fa79118f46753653b48979bacfb64a8c795489a129cf6da712e6603e 249B / 249B 0.8s done
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 1.05MB / 11.89MB 4.7s
+#6 sha256:9970f4c20ff16c00981dddbf196b2a36b5b3c1a0e30e106f4f422379bbfed24c 1.05MB / 1.29MB 5.1s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 0B / 29.79MB 5.3s
+#6 sha256:9970f4c20ff16c00981dddbf196b2a36b5b3c1a0e30e106f4f422379bbfed24c 1.29MB / 1.29MB 5.4s done
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 2.10MB / 11.89MB 7.1s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 2.10MB / 29.79MB 7.5s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 3.15MB / 11.89MB 8.1s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 4.19MB / 11.89MB 9.8s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 5.24MB / 11.89MB 11.0s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 4.19MB / 29.79MB 11.1s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 6.29MB / 11.89MB 12.2s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 7.34MB / 11.89MB 13.8s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 6.29MB / 29.79MB 14.0s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 8.39MB / 11.89MB 14.9s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 9.44MB / 11.89MB 15.9s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 10.49MB / 11.89MB 16.8s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 8.39MB / 29.79MB 16.7s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 11.53MB / 11.89MB 17.6s
+#6 sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 11.89MB / 11.89MB 17.9s done
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 10.49MB / 29.79MB 18.5s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 12.58MB / 29.79MB 20.3s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 14.68MB / 29.79MB 21.8s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 16.78MB / 29.79MB 23.1s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 18.87MB / 29.79MB 24.3s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 20.97MB / 29.79MB 25.8s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 23.07MB / 29.79MB 27.0s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 25.17MB / 29.79MB 28.1s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 27.26MB / 29.79MB 29.4s
+#6 sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 29.79MB / 29.79MB 29.9s done
+#6 extracting sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97
+#6 extracting sha256:72c03230f1363a3fb61d2f98504cf168bad3fe22f511ad2005dc021515d7ce97 0.5s done
+#6 DONE 30.5s
+
+#6 [1/8] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#6 extracting sha256:9970f4c20ff16c00981dddbf196b2a36b5b3c1a0e30e106f4f422379bbfed24c 0.0s done
+#6 extracting sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b
+#6 extracting sha256:bae41854fae8c788c7274e02aa1ce9791a1a44317194e4213bebeb96be6e634b 0.2s done
+#6 DONE 30.8s
+
+#6 [1/8] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#6 extracting sha256:cf5110b4fa79118f46753653b48979bacfb64a8c795489a129cf6da712e6603e 0.0s done
+#6 DONE 30.8s
+
+#7 [2/8] RUN apt-get update  && apt-get install -y --no-install-recommends gcc make libc6-dev strace git  && rm -rf /var/lib/apt/lists/*  && dpkg-query -W -f='${Package}=${Version}\n' gcc make libc6-dev strace git > /opt/toolchain.lock  && echo "python3=$(python3 -c 'import platform; print(platform.python_version())')" >> /opt/toolchain.lock  && echo "arch=$(dpkg --print-architecture)" >> /opt/toolchain.lock
+#7 0.617 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#7 1.914 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#7 2.410 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#7 2.880 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]

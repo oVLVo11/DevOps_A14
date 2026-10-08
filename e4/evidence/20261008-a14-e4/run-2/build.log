@@ -1,0 +1,59 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+#1 [internal] load local bake definitions
+#1 reading from stdin 590B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.70kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 106B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 8.06kB 0.0s done
+#5 DONE 0.0s
+
+#6 [1/8] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#6 resolve m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done
+#6 DONE 0.0s
+
+#7 [6/8] WORKDIR /app
+#7 CACHED
+
+#8 [7/8] COPY --chown=app:app services/buildchecker/ /app/
+#8 CACHED
+
+#9 [5/8] RUN useradd --create-home --uid 10001 app && install -d -o app -g app /app
+#9 CACHED
+
+#10 [4/8] RUN pip install --no-cache-dir --require-hashes -r /tmp/requirements-dev.lock  && pip freeze | sed 's/^/pip:/' >> /opt/toolchain.lock
+#10 CACHED
+
+#11 [3/8] COPY requirements-dev.lock /tmp/requirements-dev.lock
+#11 CACHED
+
+#12 [2/8] RUN sed -i       -e "s|http://deb.debian.org/debian-security|https://mirrors.aliyun.com/debian-security|g"       -e "s|http://deb.debian.org/debian|https://mirrors.aliyun.com/debian|g"       /etc/apt/sources.list.d/debian.sources  && apt-get update  && apt-get install -y --no-install-recommends gcc make libc6-dev strace git  && rm -rf /var/lib/apt/lists/*  && dpkg-query -W -f='${Package}=${Version}\n' gcc make libc6-dev strace git > /opt/toolchain.lock  && echo "python3=$(python3 -c 'import platform; print(platform.python_version())')" >> /opt/toolchain.lock  && echo "arch=$(dpkg --print-architecture)" >> /opt/toolchain.lock
+#12 CACHED
+
+#13 [8/8] COPY --chown=app:app fixtures/ /app/fixtures/
+#13 CACHED
+
+#14 exporting to image
+#14 exporting layers done
+#14 exporting manifest sha256:1c8d3f621c02f95f17d19a0ba5829e4f51c7f5af978503f5e87cafacc6036b33 done
+#14 exporting config sha256:42297884d4d82b17ce3a391b261391a2e8c0557e663becf5d44208d013dd1108 done
+#14 exporting attestation manifest sha256:7a7b01e4dfcdc8f44adb4834c83d8e207b4f873a500e660d67ee6ad19f4abe7a 0.0s done
+#14 exporting manifest list sha256:fe1c3023ea3699540477d39c9ba55e39157a82b87526e151a791f542bd39eccb
+#14 exporting manifest list sha256:fe1c3023ea3699540477d39c9ba55e39157a82b87526e151a791f542bd39eccb done
+#14 naming to docker.io/library/e4-buildchecker:241880223 done
+#14 unpacking to docker.io/library/e4-buildchecker:241880223 done
+#14 DONE 0.1s
+
+#15 resolving provenance for metadata file
+#15 DONE 0.0s
+ e4-buildchecker:241880223  Built
