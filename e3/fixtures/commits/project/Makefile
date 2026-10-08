@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -O0
+CFLAGS = -O0 -DMODE=7
 
 .PHONY: all clean test
 
