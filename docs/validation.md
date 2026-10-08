@@ -51,7 +51,7 @@ PASS: artifact://a14-check/job-full01/md.json 可读取
 
 离线后端只实现本契约使用到的 JSON Schema Draft 2020-12 关键字，遇到未知关键字会失败。安装 `jsonschema` 后，校验器会优先使用完整后端。
 
-校验器不执行 shell 命令、不检出远程仓库、不拉取镜像、不调用 LLM、不验证真实 HTTP 状态迁移，也不证明 BuildChecker/EChecker 算法正确。这些属于 E3。
+校验器不执行shell命令、不检出远程仓库、不拉取镜像、不调用LLM、不验证真实HTTP状态迁移，也不证明BuildChecker/EChecker算法正确。E3另行提供测试基线与真实命令证据；算法实现属于后续里程碑。
 
 ## ZIP 复核
 
@@ -62,3 +62,7 @@ PASS: artifact://a14-check/job-full01/md.json 可读取
 B14 已确认收到 A14 回复，并在其仓库记录交接结果。B14 反馈其校验器已通过 A14 的 20 个合法样例，按预期拒绝 7 个非法样例，并核对 19 份产物；双方 Schema 规则一致。B14 最初指定 E2 1.0 基线为 `689539119e60afd4b224d3163d1ba292992baa95`。
 
 A14 对最初基线执行原始 `git archive` 时发现 Git 换行规范化导致 19 份产物摘要不符。双方随后均通过 `.gitattributes` 对 `contracts/artifacts/**` 设置 `-text`。B14 发布修复基线 `ef50c0f6a64ce74d6f2cca5a9b968aedbb0b5856` 后，A14 已核验：该 commit 存在，修复只增加字节保护及验证记录；从该 commit 原始导出后，19 份产物 SHA-256 全部匹配，69 项契约检查全部通过。该问题已关闭。
+
+## E3验证入口
+
+E3真实运行、环境、8项行为检查和证据SHA-256见[`e3/验证记录_20261008.md`](../e3/验证记录_20261008.md)。E2的69项契约检查与E3的8项行为检查相互独立，不能用其中一项替代另一项。

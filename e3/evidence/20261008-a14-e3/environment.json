@@ -1,0 +1,83 @@
+{
+  "recorded_at_utc": "2026-10-08T03:28:49.914738+00:00",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "system": "Linux",
+  "release": "6.6.87.2-microsoft-standard-WSL2",
+  "machine": "x86_64",
+  "tools": {
+    "git": {
+      "command": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "git version 2.34.1"
+    },
+    "make": {
+      "command": [
+        "make",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "GNU Make 4.3"
+    },
+    "cc": {
+      "command": [
+        "cc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+    },
+    "python3": {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "Python 3.10.12"
+    },
+    "strace": {
+      "command": [
+        "strace",
+        "--version"
+      ],
+      "exit_code": 0,
+      "version": "strace -- version 5.16"
+    }
+  },
+  "repository_head": "59a3ce2b47461505143d020703e81bd8f68dd667",
+  "baseline": {
+    "schema_version": "1.0",
+    "repository_url": "https://github.com/oVLVo11/DevOps_A14.git",
+    "project_path": "e3/fixtures/commits/project",
+    "configuration": {
+      "configuration_id": "a14-e3-linux-x86_64-gcc11-make43",
+      "build_command": "make clean && make",
+      "incremental_command": "make",
+      "verify_command": "./app",
+      "network": "DISABLED"
+    },
+    "versions": {
+      "C0": {
+        "tag": "a14-e3-c0",
+        "commit": "4445e4be50af6683b75017e7fa65c4f8212ea80e",
+        "purpose": "correct initial dependency declaration",
+        "expected_clean_output": "10"
+      },
+      "C1": {
+        "tag": "a14-e3-c1",
+        "commit": "37fcadb1eced8d2504b1d5e0bd96f3b8091568b1",
+        "purpose": "add feature.h include without declaring the dependency",
+        "expected_clean_output": "12"
+      },
+      "C2": {
+        "tag": "a14-e3-c2",
+        "commit": "59a3ce2b47461505143d020703e81bd8f68dd667",
+        "purpose": "change only CFLAGS by adding -DMODE=7",
+        "expected_incremental_output_from_c1": "12",
+        "expected_clean_output": "19"
+      }
+    }
+  }
+}

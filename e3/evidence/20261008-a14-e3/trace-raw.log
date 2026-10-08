@@ -1,0 +1,1323 @@
+===== trace.log.1033 =====
+execve("/usr/bin/make", ["make"], 0x7fff097b5a28 /* 24 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=26588, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 4096) = 88
+newfstatat(AT_FDCWD, "/usr/gnu/include", 0x7fff14401c30, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/include", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/include", {st_mode=S_IFDIR|0755, st_size=16384, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/include", {st_mode=S_IFDIR|0755, st_size=16384, ...}, 0) = 0
+newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0777, st_size=512, ...}, 0) = 0
+openat(AT_FDCWD, ".", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0777, st_size=512, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "Makefile", O_RDONLY)  = 3
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=172, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "RCS", 0x7fff14401bc0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "SCCS", 0x7fff14401bc0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "Makefile", {st_mode=S_IFREG|0777, st_size=172, ...}, 0) = 0
+newfstatat(AT_FDCWD, "app", 0x7fff143ff9e0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "main.o", 0x7fff143ff8c0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "main.c", {st_mode=S_IFREG|0777, st_size=100, ...}, 0) = 0
+newfstatat(AT_FDCWD, "unused.h", {st_mode=S_IFREG|0777, st_size=70, ...}, 0) = 0
+newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/local/sbin/cc", 0x7fff14401450, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/cc", 0x7fff14401450, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/cc", 0x7fff14401450, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/cc", {st_mode=S_IFREG|0755, st_size=928584, ...}, 0) = 0
+access("/usr/bin/cc", X_OK)             = 0
+clone3({flags=CLONE_VM|CLONE_VFORK, exit_signal=SIGCHLD, stack=0x755f772c0000, stack_size=0x9000}, 88) = 1034
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1034
+newfstatat(AT_FDCWD, "main.o", {st_mode=S_IFREG|0777, st_size=1504, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/local/sbin/cc", 0x7fff14401570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/cc", 0x7fff14401570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/cc", 0x7fff14401570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/cc", {st_mode=S_IFREG|0755, st_size=928584, ...}, 0) = 0
+access("/usr/bin/cc", X_OK)             = 0
+clone3({flags=CLONE_VM|CLONE_VFORK, exit_signal=SIGCHLD, stack=0x755f772c0000, stack_size=0x9000}, 88) = 1037
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1037
+newfstatat(AT_FDCWD, "app", {st_mode=S_IFREG|0777, st_size=15960, ...}, 0) = 0
+chdir("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace") = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+===== trace.log.1034 =====
+execve("/usr/bin/cc", ["cc", "-c", "main.c", "-o", "main.o"], 0x5d0fa797c080 /* 27 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=26588, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+access("/usr/local/sbin/cc", X_OK)      = -1 ENOENT (No such file or directory)
+access("/usr/local/bin/cc", X_OK)       = -1 ENOENT (No such file or directory)
+access("/usr/sbin/cc", X_OK)            = -1 ENOENT (No such file or directory)
+access("/usr/bin/cc", X_OK)             = 0
+newfstatat(AT_FDCWD, "/usr/bin/cc", {st_mode=S_IFREG|0755, st_size=928584, ...}, 0) = 0
+readlink("/usr", 0x7fff1afe0800, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/cc", "/etc/alternatives/cc", 1023) = 20
+readlink("/etc", 0x7fff1afe0800, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives/cc", "/usr/bin/gcc", 1023) = 12
+readlink("/usr", 0x7fff1afe0800, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/gcc", "gcc-11", 1023) = 6
+readlink("/usr/bin/gcc-11", "x86_64-linux-gnu-gcc-11", 1023) = 23
+readlink("/usr/bin/x86_64-linux-gnu-gcc-11", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+access("/usr/local/sbin/cc", X_OK)      = -1 ENOENT (No such file or directory)
+access("/usr/local/bin/cc", X_OK)       = -1 ENOENT (No such file or directory)
+access("/usr/sbin/cc", X_OK)            = -1 ENOENT (No such file or directory)
+access("/usr/bin/cc", X_OK)             = 0
+newfstatat(AT_FDCWD, "/usr/bin/cc", {st_mode=S_IFREG|0755, st_size=928584, ...}, 0) = 0
+readlink("/usr", 0x7fff1afe0800, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/cc", "/etc/alternatives/cc", 1023) = 20
+readlink("/etc", 0x7fff1afe0800, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives/cc", "/usr/bin/gcc", 1023) = 12
+readlink("/usr", 0x7fff1afe0800, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/gcc", "gcc-11", 1023) = 6
+readlink("/usr/bin/gcc-11", "x86_64-linux-gnu-gcc-11", 1023) = 23
+readlink("/usr/bin/x86_64-linux-gnu-gcc-11", 0x7fff1afe0800, 1023) = -1 EINVAL (Invalid argument)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/main.c", 0x7fff1afe11a0, 1023) = -1 EINVAL (Invalid argument)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/main.o", 0x7fff1afe11a0, 1023) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/", X_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/", X_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/", X_OK) = 0
+access("/tmp", R_OK|W_OK|X_OK)          = 0
+openat(AT_FDCWD, "/tmp/ccceoZqK.s", O_RDWR|O_CREAT|O_EXCL, 0600) = 3
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/cc1", {st_mode=S_IFREG|0755, st_size=25957088, ...}, 0) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/cc1", X_OK) = 0
+vfork()                                 = 1035
+wait4(1035, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1035
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1035, si_uid=1000, si_status=0, si_utime=2, si_stime=2} ---
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/11/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/11/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu-as", 0x7fff1afe2840, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/as", 0x7fff1afe2890, 0) = -1 ENOENT (No such file or directory)
+vfork()                                 = 1036
+wait4(1036, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1036
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1036, si_uid=1000, si_status=0, si_utime=0, si_stime=1} ---
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/11/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/11/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/11/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/.", 0x7fff1afe27d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/tmp/ccceoZqK.s", {st_mode=S_IFREG|0600, st_size=690, ...}, 0) = 0
+unlink("/tmp/ccceoZqK.s")               = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+===== trace.log.1035 =====
+execve("/usr/lib/gcc/x86_64-linux-gnu/11/cc1", ["/usr/lib/gcc/x86_64-linux-gnu/11"..., "-quiet", "-imultiarch", "x86_64-linux-gnu", "main.c", "-quiet", "-dumpbase", "main.c", "-dumpbase-ext", ".c", "-mtune=generic", "-march=x86-64", "-fasynchronous-unwind-tables", "-fstack-protector-strong", "-Wformat", "-Wformat-security", "-fstack-clash-protection", "-fcf-protection", "-o", "/tmp/ccceoZqK.s"], 0x23a22210 /* 31 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=26588, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libisl.so.23", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1998584, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libmpc.so.3", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=109848, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libmpfr.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2808496, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgmp.so.10", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=526896, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libzstd.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=841808, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0538030, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr", 0x7ffdd0538030, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/x86_64-linux-gnu", 0x7ffdd0538030, 1023) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0538030, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr", 0x7ffdd0538030, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed", 0x7ffdd0538030, 1023) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/", X_OK) = 0
+readlink("/usr", 0x7ffdd0538030, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+faccessat2(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/", F_OK, AT_EACCESS) = 0
+readlink("/usr/x86_64-linux-gnu", 0x7ffdd0538030, 1023) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0538030, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr", 0x7ffdd0538030, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0538030, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/local/include/x86_64-linux-gnu", 0x7ffdd05397f0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/include", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed", 0x7ffdd05397f0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include", 0x7ffdd05397f0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/include/x86_64-linux-gnu", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/include", {st_mode=S_IFDIR|0755, st_size=16384, ...}, 0) = 0
+newfstatat(AT_FDCWD, "main.c.gch", 0x7ffdd0539850, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "main.c", O_RDONLY|O_NOCTTY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=100, ...}, AT_EMPTY_PATH) = 0
+readlink("/tmp", 0x7ffdd05380b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/tmp/ccceoZqK.s", 0x7ffdd05380b0, 1023) = -1 EINVAL (Invalid argument)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/main.c", 0x7ffdd05380b0, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/tmp/ccceoZqK.s", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14", {st_mode=S_IFDIR|0777, st_size=512, ...}, 0) = 0
+newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0777, st_size=512, ...}, 0) = 0
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 4097) = 88
+readlink("/usr", 0x7ffdd0537f40, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/stdc-predef.h", 0x7ffdd0537f40, 1023) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdc-predef.h.gch", 0x7ffdd0539820, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdc-predef.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537f40, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/stdc-predef.h", 0x7ffdd0537f40, 1023) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/include/stdc-predef.h.gch", 0x7ffdd0539820, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/stdc-predef.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537f40, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/stdc-predef.h", 0x7ffdd0537f40, 1023) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/stdc-predef.h.gch", 0x7ffdd0539820, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/stdc-predef.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537f40, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/stdc-predef.h", 0x7ffdd0537f40, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/include/stdc-predef.h.gch", 0x7ffdd0539820, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/include/stdc-predef.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=2462, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/stdio.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdio.h.gch", 0x7ffdd0539450, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdio.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/stdio.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/include/stdio.h.gch", 0x7ffdd0539450, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/stdio.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/stdio.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/stdio.h.gch", 0x7ffdd0539450, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/stdio.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/stdio.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/include/stdio.h.gch", 0x7ffdd0539450, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/include/stdio.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=31176, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/libc-header-start.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/libc-header-start.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/libc-header-start.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=4286, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/features.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/features.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/features.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/features.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/features.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/features.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/features.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/features.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=17860, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/features-time64.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/features-time64.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/features-time64.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/features-time64.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/features-time64.h", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/features-time64.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/features-time64.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/features-time64.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1409, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/wordsize.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/wordsize.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/wordsize.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=442, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/timesize.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/timesize.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/timesize.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/timesize.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1109, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=442, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/sys", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/sys/cdefs.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/sys", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/sys/cdefs.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/sys", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/sys/cdefs.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/sys/cdefs.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=26600, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=442, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/long-double.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/long-double.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/long-double.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/long-double.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=970, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/gnu", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/gnu/stubs.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/gnu", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/gnu/stubs.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/gnu/stubs.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/gnu/stubs.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=384, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/gnu", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/gnu/stubs-64.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/gnu", 0x7ffdd0537b70, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/gnu/stubs-64.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/gnu/stubs-64.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=481, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h", 0x7ffdd0537b70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=12959, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=4072, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/types.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/types.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=8806, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=442, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/timesize.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1109, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/wordsize.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=442, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/typesizes.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/typesizes.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/typesizes.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/typesizes.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=3737, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/time64.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/time64.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/time64.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/time64.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1340, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__fpos_t.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/types/__fpos_t.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=381, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__mbstate_t.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/types/__mbstate_t.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=564, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__fpos64_t.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/types/__fpos64_t.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=410, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/__FILE.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/types/__FILE.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types/__FILE.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=110, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/FILE.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/types/FILE.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types/FILE.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/types/FILE.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=180, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/types/struct_FILE.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/types/struct_FILE.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=4104, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/stdio_lim.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/stdio_lim.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/stdio_lim.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1213, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/floatn.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/floatn.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/floatn.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/floatn.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=4373, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/include/bits/floatn-common.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/include/bits", 0x7ffdd0537b90, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/include/bits/floatn-common.h", O_RDONLY|O_NOCTTY) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffdd0537b90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/include", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/include/x86_64-linux-gnu/bits/floatn-common.h", 0x7ffdd0537b90, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/floatn-common.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=9765, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/include/x86_64-linux-gnu/bits/long-double.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=970, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "config.h", O_RDONLY|O_NOCTTY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0777, st_size=16, ...}, AT_EMPTY_PATH) = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+===== trace.log.1036 =====
+execve("/usr/local/sbin/as", ["as", "--64", "-o", "main.o", "/tmp/ccceoZqK.s"], 0x23a22210 /* 31 vars */) = -1 ENOENT (No such file or directory)
+execve("/usr/local/bin/as", ["as", "--64", "-o", "main.o", "/tmp/ccceoZqK.s"], 0x23a22210 /* 31 vars */) = -1 ENOENT (No such file or directory)
+execve("/usr/sbin/as", ["as", "--64", "-o", "main.o", "/tmp/ccceoZqK.s"], 0x23a22210 /* 31 vars */) = -1 ENOENT (No such file or directory)
+execve("/usr/bin/as", ["as", "--64", "-o", "main.o", "/tmp/ccceoZqK.s"], 0x23a22210 /* 31 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=26588, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libopcodes-2.38-system.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1292632, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbfd-2.38-system.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1543224, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "main.o", 0x7ffd315d5e40, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "main.o", 0x7ffd315d5ca0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "main.o", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3
+openat(AT_FDCWD, "/tmp/ccceoZqK.s", O_RDONLY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0600, st_size=690, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=0, ...}, AT_EMPTY_PATH) = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+===== trace.log.1037 =====
+execve("/usr/bin/cc", ["cc", "main.o", "-o", "app"], 0x5d0fa797c080 /* 27 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=26588, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+access("/usr/local/sbin/cc", X_OK)      = -1 ENOENT (No such file or directory)
+access("/usr/local/bin/cc", X_OK)       = -1 ENOENT (No such file or directory)
+access("/usr/sbin/cc", X_OK)            = -1 ENOENT (No such file or directory)
+access("/usr/bin/cc", X_OK)             = 0
+newfstatat(AT_FDCWD, "/usr/bin/cc", {st_mode=S_IFREG|0755, st_size=928584, ...}, 0) = 0
+readlink("/usr", 0x7ffcc6b4b780, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/cc", "/etc/alternatives/cc", 1023) = 20
+readlink("/etc", 0x7ffcc6b4b780, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives/cc", "/usr/bin/gcc", 1023) = 12
+readlink("/usr", 0x7ffcc6b4b780, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/gcc", "gcc-11", 1023) = 6
+readlink("/usr/bin/gcc-11", "x86_64-linux-gnu-gcc-11", 1023) = 23
+readlink("/usr/bin/x86_64-linux-gnu-gcc-11", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+access("/usr/local/sbin/cc", X_OK)      = -1 ENOENT (No such file or directory)
+access("/usr/local/bin/cc", X_OK)       = -1 ENOENT (No such file or directory)
+access("/usr/sbin/cc", X_OK)            = -1 ENOENT (No such file or directory)
+access("/usr/bin/cc", X_OK)             = 0
+newfstatat(AT_FDCWD, "/usr/bin/cc", {st_mode=S_IFREG|0755, st_size=928584, ...}, 0) = 0
+readlink("/usr", 0x7ffcc6b4b780, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/cc", "/etc/alternatives/cc", 1023) = 20
+readlink("/etc", 0x7ffcc6b4b780, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+readlink("/etc/alternatives/cc", "/usr/bin/gcc", 1023) = 12
+readlink("/usr", 0x7ffcc6b4b780, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/bin", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/bin/gcc", "gcc-11", 1023) = 6
+readlink("/usr/bin/gcc-11", "x86_64-linux-gnu-gcc-11", 1023) = 23
+readlink("/usr/bin/x86_64-linux-gnu-gcc-11", 0x7ffcc6b4b780, 1023) = -1 EINVAL (Invalid argument)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/main.o", 0x7ffcc6b4c120, 1023) = -1 EINVAL (Invalid argument)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/app", 0x7ffcc6b4c120, 1023) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/", X_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/", X_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/specs", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/", X_OK) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper", {st_mode=S_IFREG|0755, st_size=753768, ...}, 0) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper", X_OK) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/collect2", {st_mode=S_IFREG|0755, st_size=299048, ...}, 0) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/collect2", X_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so", R_OK) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/11/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/bin/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/11/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/11/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/.", 0x7ffcc6b4d750, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+access("/tmp", R_OK|W_OK|X_OK)          = 0
+openat(AT_FDCWD, "/tmp/cc2mNuqv.res", O_RDWR|O_CREAT|O_EXCL, 0600) = 3
+access("/usr/lib/gcc/x86_64-linux-gnu/11/Scrt1.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/Scrt1.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/Scrt1.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/Scrt1.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o", R_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/crti.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/crti.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/crti.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/crti.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/crti.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o", R_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o", R_OK) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/.", 0x7ffcc6b4ca10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/.", 0x7ffcc6b4ca10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/.", 0x7ffcc6b4ca10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/.", 0x7ffcc6b4ca10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/11/.", 0x7ffcc6b4ca10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/lib/../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/11/.", 0x7ffcc6b4ca10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/.", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/../lib/.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/.", 0x7ffcc6b4ca10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../.", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o", R_OK) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/crtn.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/11/crtn.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/crtn.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/lib/../lib/crtn.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/11/crtn.o", R_OK) = -1 ENOENT (No such file or directory)
+access("/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o", R_OK) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/collect2", {st_mode=S_IFREG|0755, st_size=299048, ...}, 0) = 0
+access("/usr/lib/gcc/x86_64-linux-gnu/11/collect2", X_OK) = 0
+vfork()                                 = 1038
+wait4(1038, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1038
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1038, si_uid=1000, si_status=0, si_utime=0, si_stime=1} ---
+newfstatat(AT_FDCWD, "/tmp/cc2mNuqv.res", {st_mode=S_IFREG|0600, st_size=0, ...}, 0) = 0
+unlink("/tmp/cc2mNuqv.res")             = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+===== trace.log.1038 =====
+execve("/usr/lib/gcc/x86_64-linux-gnu/11/collect2", ["/usr/lib/gcc/x86_64-linux-gnu/11"..., "-plugin", "/usr/lib/gcc/x86_64-linux-gnu/11"..., "-plugin-opt=/usr/lib/gcc/x86_64-"..., "-plugin-opt=-fresolution=/tmp/cc"..., "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "-plugin-opt=-pass-through=-lc", "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "--build-id", "--eh-frame-hdr", "-m", "elf_x86_64", "--hash-style=gnu", "--as-needed", "-dynamic-linker", "/lib64/ld-linux-x86-64.so.2", "-pie", "-z", "now", "-z", "relro", "-o", "app", "/usr/lib/gcc/x86_64-linux-gnu/11"..., "/usr/lib/gcc/x86_64-linux-gnu/11"..., "/usr/lib/gcc/x86_64-linux-gnu/11"..., "-L/usr/lib/gcc/x86_64-linux-gnu/"..., "-L/usr/lib/gcc/x86_64-linux-gnu/"..., "-L/usr/lib/gcc/x86_64-linux-gnu/"..., "-L/lib/x86_64-linux-gnu", ...], 0x1537f950 /* 34 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=26588, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/real-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/real-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/real-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/real-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/real-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/collect-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/collect-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/collect-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/collect-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/collect-ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/ld", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/ld", {st_mode=S_IFREG|0755, st_size=1736184, ...}, 0) = 0
+access("/usr/bin/ld", X_OK)             = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/sbin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/games/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/games/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/wsl/lib/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.codex/tmp/arg0/codex-arg0zbIy6e/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libheif/libheif/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/jxrlib/jxrlib/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/Common Files/Oracle/Java/javapath/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/system32/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/System32/Wbem/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/System32/OpenSSH/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/dotnet/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/mingw64/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Git/cmd/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/nodejs/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/texlive/2026/bin/windows/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Bandizip/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Node/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/Programs/Python/Python311/Scripts/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/Programs/Python/Python311/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Python/Scripts/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Python/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/Microsoft/WindowsApps/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Microsoft VS Code/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Pycharm/PyCharm 2024.2.4/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Pycharm/PyCharm Community Edition 2024.2.4/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/IntelliJ IDEA Community Edition 2024.3.3/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Maven/apache-maven-3.9.16/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Roaming/npm/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.dotnet/tools/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git/cmd/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/OpenAI/Codex/bin/6de5bf5fa8384f8d/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/OpenAI/Codex/bin/f544b3844e0f14e9/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/snap/bin/gnm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/nm", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/nm", {st_mode=S_IFREG|0755, st_size=44672, ...}, 0) = 0
+access("/usr/bin/nm", X_OK)             = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/sbin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/games/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/games/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/wsl/lib/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.codex/tmp/arg0/codex-arg0zbIy6e/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libheif/libheif/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/jxrlib/jxrlib/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/Common Files/Oracle/Java/javapath/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/system32/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/System32/Wbem/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/WINDOWS/System32/OpenSSH/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/dotnet/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/mingw64/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Git/cmd/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/nodejs/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/texlive/2026/bin/windows/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Bandizip/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Node/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/Programs/Python/Python311/Scripts/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/Programs/Python/Python311/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Python/Scripts/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Python/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/Microsoft/WindowsApps/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Microsoft VS Code/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Pycharm/PyCharm 2024.2.4/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Pycharm/PyCharm Community Edition 2024.2.4/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/IntelliJ IDEA Community Edition 2024.3.3/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/d/Maven/apache-maven-3.9.16/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Roaming/npm/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.dotnet/tools/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git/cmd/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/OpenAI/Codex/bin/6de5bf5fa8384f8d/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/mnt/c/Users/12116/AppData/Local/OpenAI/Codex/bin/f544b3844e0f14e9/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/snap/bin/gstrip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/strip", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/strip", {st_mode=S_IFREG|0755, st_size=166472, ...}, 0) = 0
+access("/usr/bin/strip", X_OK)          = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/cc", 0x7ffe57732760, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/cc", {st_mode=S_IFREG|0755, st_size=928584, ...}, 0) = 0
+access("/usr/bin/cc", X_OK)             = 0
+access("/tmp", R_OK|W_OK|X_OK)          = 0
+openat(AT_FDCWD, "/tmp/ccY5Zcq9.cdtor.c", O_RDWR|O_CREAT|O_EXCL, 0600) = 3
+openat(AT_FDCWD, "/tmp/ccxP21Z2.cdtor.o", O_RDWR|O_CREAT|O_EXCL, 0600) = 3
+vfork()                                 = 1039
+wait4(1039, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1039
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1039, si_uid=1000, si_status=0, si_utime=0, si_stime=3} ---
+newfstatat(AT_FDCWD, "/tmp/ccY5Zcq9.cdtor.c", {st_mode=S_IFREG|0600, st_size=0, ...}, AT_SYMLINK_NOFOLLOW) = 0
+unlink("/tmp/ccY5Zcq9.cdtor.c")         = 0
+newfstatat(AT_FDCWD, "/tmp/ccxP21Z2.cdtor.o", {st_mode=S_IFREG|0600, st_size=0, ...}, AT_SYMLINK_NOFOLLOW) = 0
+unlink("/tmp/ccxP21Z2.cdtor.o")         = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+===== trace.log.1039 =====
+execve("/usr/bin/ld", ["/usr/bin/ld", "-plugin", "/usr/lib/gcc/x86_64-linux-gnu/11"..., "-plugin-opt=/usr/lib/gcc/x86_64-"..., "-plugin-opt=-fresolution=/tmp/cc"..., "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "-plugin-opt=-pass-through=-lc", "-plugin-opt=-pass-through=-lgcc", "-plugin-opt=-pass-through=-lgcc_"..., "--build-id", "--eh-frame-hdr", "-m", "elf_x86_64", "--hash-style=gnu", "--as-needed", "-dynamic-linker", "/lib64/ld-linux-x86-64.so.2", "-pie", "-z", "now", "-z", "relro", "-o", "app", "/usr/lib/gcc/x86_64-linux-gnu/11"..., "/usr/lib/gcc/x86_64-linux-gnu/11"..., "/usr/lib/gcc/x86_64-linux-gnu/11"..., "-L/usr/lib/gcc/x86_64-linux-gnu/"..., "-L/usr/lib/gcc/x86_64-linux-gnu/"..., "-L/usr/lib/gcc/x86_64-linux-gnu/"..., "-L/lib/x86_64-linux-gnu", ...], 0x7ffe57732c40 /* 34 vars */) = 0
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=26588, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbfd-2.38-system.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1543224, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libctf.so.0", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=228576, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=89120, ...}, AT_EMPTY_PATH) = 0
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/app", 0x7fff98c59110, 1023) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7fff98c59110, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+faccessat2(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/", F_OK, AT_EACCESS) = 0
+readlink("/usr/lib/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/Scrt1.o", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr", 0x7fff98c59110, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+faccessat2(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/", F_OK, AT_EACCESS) = 0
+readlink("/usr/lib/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/crti.o", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr", 0x7fff98c59110, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/main.o", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/-lgcc", 0x7fff98c59110, 1023) = -1 ENOENT (No such file or directory)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/-lgcc_s", 0x7fff98c59110, 1023) = -1 ENOENT (No such file or directory)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/-lc", 0x7fff98c59110, 1023) = -1 ENOENT (No such file or directory)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/-lgcc", 0x7fff98c59110, 1023) = -1 ENOENT (No such file or directory)
+getcwd("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace", 1024) = 88
+readlink("/mnt/c/Users/12116/Desktop/DevOps/\351\241\271\347\233\256/DevOps_A14/e3/work/20261008-a14-e3/linux-trace/-lgcc_s", 0x7fff98c59110, 1023) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7fff98c59110, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr", 0x7fff98c59110, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/gcc/x86_64-linux-gnu/11", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+faccessat2(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/", F_OK, AT_EACCESS) = 0
+readlink("/usr/lib/x86_64-linux-gnu", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/crtn.o", 0x7fff98c59110, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "app", 0x7fff98c5a8e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "app", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o", {st_mode=S_IFREG|0644, st_size=1656, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o", O_RDONLY) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1656, ...}, AT_EMPTY_PATH) = 0
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1656, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=1656, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o", {st_mode=S_IFREG|0644, st_size=1192, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o", O_RDONLY) = 5
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=1192, ...}, AT_EMPTY_PATH) = 0
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=1192, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o", O_RDONLY) = 6
+newfstatat(6, "", {st_mode=S_IFREG|0644, st_size=1192, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o", {st_mode=S_IFREG|0644, st_size=2752, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o", O_RDONLY) = 6
+newfstatat(6, "", {st_mode=S_IFREG|0644, st_size=2752, ...}, AT_EMPTY_PATH) = 0
+newfstatat(6, "", {st_mode=S_IFREG|0644, st_size=2752, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o", O_RDONLY) = 7
+newfstatat(7, "", {st_mode=S_IFREG|0644, st_size=2752, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "main.o", {st_mode=S_IFREG|0777, st_size=1504, ...}, 0) = 0
+openat(AT_FDCWD, "main.o", O_RDONLY)    = 7
+newfstatat(7, "", {st_mode=S_IFREG|0777, st_size=1504, ...}, AT_EMPTY_PATH) = 0
+newfstatat(7, "", {st_mode=S_IFREG|0777, st_size=1504, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "main.o", O_RDONLY)    = 8
+newfstatat(8, "", {st_mode=S_IFREG|0777, st_size=1504, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", 0x7fff98c5a6f0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", {st_mode=S_IFREG|0644, st_size=3001414, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", O_RDONLY) = 8
+newfstatat(8, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(8, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", {st_mode=S_IFREG|0644, st_size=132, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 9
+newfstatat(9, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+newfstatat(9, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 10
+newfstatat(10, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 10
+newfstatat(10, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 9
+newfstatat(9, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", 0x7fff98c5a720, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "libgcc_s.so.1", 0x7fff98c5a6d0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "libgcc_s.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", 0x7fff98c5a6d0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1", {st_mode=S_IFREG|0644, st_size=125488, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY) = 9
+newfstatat(9, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+newfstatat(9, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY) = 10
+newfstatat(10, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", 0x7fff98c5a680, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", {st_mode=S_IFREG|0644, st_size=3001414, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", O_RDONLY) = 10
+newfstatat(10, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(10, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libc.so", 0x7fff98c5a6f0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libc.so", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libc.a", 0x7fff98c5a730, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libc.a", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libc.so", {st_mode=S_IFREG|0644, st_size=283, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libc.so", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0644, st_size=283, ...}, AT_EMPTY_PATH) = 0
+newfstatat(11, "", {st_mode=S_IFREG|0644, st_size=283, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libc.so", O_RDONLY) = 12
+newfstatat(12, "", {st_mode=S_IFREG|0644, st_size=283, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libc.so", O_RDONLY) = 12
+newfstatat(12, "", {st_mode=S_IFREG|0644, st_size=283, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libc.so", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0644, st_size=283, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", {st_mode=S_IFREG|0755, st_size=2220400, ...}, 0) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+newfstatat(11, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY) = 12
+newfstatat(12, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc_nonshared.a", {st_mode=S_IFREG|0644, st_size=5594, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc_nonshared.a", O_RDONLY) = 12
+newfstatat(12, "", {st_mode=S_IFREG|0644, st_size=5594, ...}, AT_EMPTY_PATH) = 0
+newfstatat(12, "", {st_mode=S_IFREG|0644, st_size=5594, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/lib64/ld-linux-x86-64.so.2", {st_mode=S_IFREG|0755, st_size=240936, ...}, 0) = 0
+openat(AT_FDCWD, "/lib64/ld-linux-x86-64.so.2", O_RDONLY) = 13
+newfstatat(13, "", {st_mode=S_IFREG|0755, st_size=240936, ...}, AT_EMPTY_PATH) = 0
+newfstatat(13, "", {st_mode=S_IFREG|0755, st_size=240936, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib64/ld-linux-x86-64.so.2", O_RDONLY) = 14
+newfstatat(14, "", {st_mode=S_IFREG|0755, st_size=240936, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", 0x7fff98c5a6f0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", {st_mode=S_IFREG|0644, st_size=3001414, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", O_RDONLY) = 14
+newfstatat(14, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(14, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", {st_mode=S_IFREG|0644, st_size=132, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 15
+newfstatat(15, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+newfstatat(15, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 16
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 16
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so", O_RDONLY) = 15
+newfstatat(15, "", {st_mode=S_IFREG|0644, st_size=132, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", 0x7fff98c5a720, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "libgcc_s.so.1", 0x7fff98c5a6d0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "libgcc_s.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", 0x7fff98c5a6d0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc_s.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1", {st_mode=S_IFREG|0644, st_size=125488, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY) = 15
+newfstatat(15, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+newfstatat(15, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY) = 16
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", 0x7fff98c5a680, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.so", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", {st_mode=S_IFREG|0644, st_size=3001414, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a", O_RDONLY) = 16
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o", {st_mode=S_IFREG|0644, st_size=1168, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o", O_RDONLY) = 17
+newfstatat(17, "", {st_mode=S_IFREG|0644, st_size=1168, ...}, AT_EMPTY_PATH) = 0
+newfstatat(17, "", {st_mode=S_IFREG|0644, st_size=1168, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o", O_RDONLY) = 18
+newfstatat(18, "", {st_mode=S_IFREG|0644, st_size=1168, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o", {st_mode=S_IFREG|0644, st_size=760, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o", O_RDONLY) = 18
+newfstatat(18, "", {st_mode=S_IFREG|0644, st_size=760, ...}, AT_EMPTY_PATH) = 0
+newfstatat(18, "", {st_mode=S_IFREG|0644, st_size=760, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o", O_RDONLY) = 19
+newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=760, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/lib64/ld-linux-x86-64.so.2", {st_mode=S_IFREG|0755, st_size=240936, ...}, 0) = 0
+openat(AT_FDCWD, "/lib64/ld-linux-x86-64.so.2", O_RDONLY) = 19
+newfstatat(19, "", {st_mode=S_IFREG|0755, st_size=240936, ...}, AT_EMPTY_PATH) = 0
+newfstatat(19, "", {st_mode=S_IFREG|0755, st_size=240936, ...}, AT_EMPTY_PATH) = 0
+newfstatat(19, "", {st_mode=S_IFREG|0755, st_size=240936, ...}, AT_EMPTY_PATH) = 0
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=1656, ...}, AT_EMPTY_PATH) = 0
+newfstatat(5, "", {st_mode=S_IFREG|0644, st_size=1192, ...}, AT_EMPTY_PATH) = 0
+newfstatat(6, "", {st_mode=S_IFREG|0644, st_size=2752, ...}, AT_EMPTY_PATH) = 0
+newfstatat(7, "", {st_mode=S_IFREG|0777, st_size=1504, ...}, AT_EMPTY_PATH) = 0
+newfstatat(8, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(14, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(17, "", {st_mode=S_IFREG|0644, st_size=1168, ...}, AT_EMPTY_PATH) = 0
+newfstatat(18, "", {st_mode=S_IFREG|0644, st_size=760, ...}, AT_EMPTY_PATH) = 0
+newfstatat(10, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(11, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+newfstatat(12, "", {st_mode=S_IFREG|0644, st_size=5594, ...}, AT_EMPTY_PATH) = 0
+newfstatat(16, "", {st_mode=S_IFREG|0644, st_size=3001414, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=0, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15512, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=15960, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "app", {st_mode=S_IFREG|0777, st_size=15960, ...}, 0) = 0
+chmod("app", 0777)                      = 0
+exit_group(0)                           = ?
++++ exited with 0 +++

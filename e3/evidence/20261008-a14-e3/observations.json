@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261008-a14-e3",
+  "source": "REAL_EXECUTION_WITH_INSTRUCTOR_ORACLE",
+  "passed": true,
+  "checks_passed": 8,
+  "checks_total": 8,
+  "observations": [
+    {
+      "id": "md_initial",
+      "expected": {
+        "make_exit": 0,
+        "app_output": "1"
+      },
+      "actual": {
+        "make_exit": 0,
+        "app_exit": 0,
+        "app_output": "1"
+      },
+      "passed": true,
+      "basis": "fixture builds before dependency behavior is exercised"
+    },
+    {
+      "id": "missing_dependency_behavior",
+      "expected": {
+        "incremental_output": "1",
+        "clean_output": "2"
+      },
+      "actual": {
+        "incremental_make_exit": 0,
+        "incremental_output": "1",
+        "clean_make_exit": 0,
+        "clean_output": "2"
+      },
+      "passed": true,
+      "basis": "config.h is read but absent from main.o prerequisites"
+    },
+    {
+      "id": "redundant_dependency_behavior",
+      "expected": {
+        "recompile": true,
+        "app_output": "1"
+      },
+      "actual": {
+        "make_exit": 0,
+        "recompile": true,
+        "make_output": "cc -c main.c -o main.o\ncc main.o -o app"
+      },
+      "passed": true,
+      "basis": "unused.h is declared but not read, so changing it causes unnecessary compilation"
+    },
+    {
+      "id": "negative_missing_header",
+      "expected": {
+        "make_nonzero": true
+      },
+      "actual": {
+        "make_exit": 2
+      },
+      "passed": true,
+      "basis": "failure log is bound to a concrete source snapshot"
+    },
+    {
+      "id": "c0_clean",
+      "expected": {
+        "make_exit": 0,
+        "output": "10",
+        "findings": []
+      },
+      "actual": {
+        "make_exit": 0,
+        "output": "10"
+      },
+      "passed": true,
+      "basis": "C0 source and declared project dependencies agree"
+    },
+    {
+      "id": "c1_missing_feature",
+      "expected": {
+        "base_clean_output": "12",
+        "after_feature_incremental": "12",
+        "after_feature_clean": "15"
+      },
+      "actual": {
+        "base_make_exit": 0,
+        "base_clean_output": "12",
+        "incremental_make_exit": 0,
+        "after_feature_incremental": "12",
+        "clean_make_exit": 0,
+        "after_feature_clean": "15"
+      },
+      "passed": true,
+      "basis": "C1 reads feature.h but leaves it out of main.o prerequisites"
+    },
+    {
+      "id": "c2_command_change",
+      "expected": {
+        "before": "12",
+        "incremental": "12",
+        "clean": "19"
+      },
+      "actual": {
+        "before": "12",
+        "incremental_make_exit": 0,
+        "incremental": "12",
+        "clean_make_exit": 0,
+        "clean": "19"
+      },
+      "passed": true,
+      "basis": "ordinary Make timestamp logic does not rebuild merely because CFLAGS changed"
+    },
+    {
+      "id": "linux_raw_trace",
+      "expected": {
+        "strace_exit": 0,
+        "config_h_hits_min": 1
+      },
+      "actual": {
+        "strace_exit": 0,
+        "trace_files": 7,
+        "config_h_hits": 1
+      },
+      "passed": true,
+      "basis": "raw file/process trace proves the compiler accessed config.h; it is not presented as a complete detector"
+    }
+  ],
+  "limitations": [
+    "The findings in oracle.json are human labels, not BuildChecker or EChecker output.",
+    "strace evidence records raw accesses only; process attribution, graph normalization and automatic MD/RD inference remain later implementation work.",
+    "Cross-group live-service integration is deferred to E12."
+  ]
+}

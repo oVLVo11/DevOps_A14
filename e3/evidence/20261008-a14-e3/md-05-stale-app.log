@@ -1,0 +1,9 @@
+$ ./app
+cwd=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/md-rd-missing
+started_utc=2026-10-08T03:28:51.347064+00:00
+exit_code=0
+
+[stdout]
+1
+
+[stderr]

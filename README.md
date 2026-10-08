@@ -1,8 +1,8 @@
-# DevOps A14 · E2 接口契约交付
+# DevOps A14 · E2接口契约与E3测试基线
 
 A14 负责论文项目 BuildChecker 与 EChecker，对应统一任务模型中的 `FULL_CHECK` 和 `INCREMENTAL_CHECK`。配对组 B14 负责 DRAFT 与 MDFixer，对应 `DRAFT` 和 `REPAIR`。
 
-本仓库交付 E2 接口契约、人工样例、可读取产物、离线校验器和设计过程记录。E2 不部署真实 HTTP API，也不声称已执行真实 Docker 构建、BuildChecker、EChecker 或跨组运行。真实项目、镜像和端到端联调属于 E3。
+本仓库交付E2接口契约与E3并行测试基线。E2包含人工契约样例、可读取产物、离线校验器和设计过程记录；E3包含MD/RD故障项目、C0/C1/C2真实Git版本、人工预期、Linux运行日志与原始跟踪。两个阶段都不声称已经实现BuildChecker/EChecker算法或完成跨组真实服务联调。
 
 A14 负责将本组成果 commit 并 push 到 A14 GitHub 仓库；A14 不负责在 Moodle 上传压缩包或完成课程平台最终提交。
 
@@ -16,6 +16,9 @@ A14 负责将本组成果 commit 并 push 到 A14 GitHub 仓库；A14 不负责�
 
 ## 交付入口
 
+- [A14 E3测试基线](e3/README.md)
+- [A14 E3交付说明](e3/A14_E3交付说明.md)
+- [A14 E3验证记录](e3/验证记录_20261008.md)
 - [A14 E2 交付说明](docs/A14_E2交付说明.md)
 - [A14 对 B14 的接口确认](A14_B14_接口确认回复.md)
 - [成果交接检查表](HANDOFF_CHECKLIST.md)
@@ -44,6 +47,13 @@ python validator/validate.py --read-artifact artifact://a14-check/job-full01/md.
 
 `validator/validate.py` 只验证 JSON、跨字段语义、产物路径和 SHA-256，不执行样例中的命令，不下载镜像，也不调用真实服务。
 
+E3需要Linux、GNU Make、C编译器、Python 3.10或更高版本和`strace`，不需要网络：
+
+```sh
+python3 e3/scripts/run_a14_e3.py --run-id my-a14-e3-run
+python3 e3/scripts/verify_evidence.py e3/evidence/my-a14-e3-run
+```
+
 ## E2 边界
 
-样例中的 `example.invalid`、重复数字提交 SHA、重复字母镜像 digest、日志和检测报告均为 `MANUAL_FIXTURE`。它们用于验证协议形状与交接规则，不能作为真实实验结果。E3 再选择真实 Make/C/C++ 项目，运行 DRAFT、BuildChecker、EChecker 和 MDFixer。
+E2样例中的`example.invalid`、重复数字提交SHA、重复字母镜像digest、日志和检测报告均为`MANUAL_FIXTURE`。E3的命令与程序输出来自真实Linux执行，但`oracle.json`仍是人工答案。E3建立后续实现的标准试题与标准答案，不把人工答案冒充检测器输出。

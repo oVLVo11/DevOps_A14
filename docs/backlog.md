@@ -1,6 +1,6 @@
 # A14 E2 / E3 Backlog
 
-状态说明：DONE_LOCAL 表示 A14 本地材料与校验完成；DONE_CROSS_GROUP 表示 B14 已确认并记录对应 E2 基线；两者都不代表已进入 E3。
+状态说明：DONE_LOCAL表示A14本地材料与校验完成；DONE_CROSS_GROUP表示双方已确认相应协作基线；DONE_REAL表示已经保留真实命令和运行证据。
 
 | ID | 工作 | 负责人 | 验收条件 | 状态 |
 | --- | --- | --- | --- | --- |
@@ -16,14 +16,18 @@
 | A14-E2-10 | A14 仓库发布 | 刘威 | E2 成果已 commit、push，GitHub 可见且完整 SHA 已记录 | DONE |
 | A14-E2-11 | E2 成果交接 | 刘威 | 仓库地址、commit SHA、ZIP、验证记录和接口回复交给课程提交负责人 | READY_FOR_HANDOFF |
 | A14-E2-12 | Git 产物字节复现 | 刘威 / B14 联系人 | 双方通过 `.gitattributes` 保留产物字节，Git 导出后 19 份摘要一致且 69 项检查通过 | DONE_CROSS_GROUP |
-| A14-E3-01 | 选择真实 Make/C/C++ 项目 | A14/B14 | 公开 repo、C0/C1、命令和环境可复现 | DEFERRED_TO_E3 |
-| A14-E3-02 | BuildChecker 实现 | A14 | clean build 产生 actual/declared graph 与 MD/RD | DEFERRED_TO_E3 |
-| A14-E3-03 | EChecker 实现 | A14 | 基于 C0 baseline 检测 C1 并输出 delta | DEFERRED_TO_E3 |
-| A14-E3-04 | DRAFT 环境联调 | A14/B14 | A14 可拉取镜像并读取至少一个真实产物 | DEFERRED_TO_E3 |
-| A14-E3-05 | MDFixer 重检闭环 | A14/B14 | patch 绑定基线，build/verify/recheck 均通过 | DEFERRED_TO_E3 |
+| A14-E3-01 | MD/RD故障项目与人工依据 | 刘威 | 一条MD、一条RD、源码和行为依据可复现 | DONE_REAL |
+| A14-E3-02 | C0/C1/C2真实版本 | 刘威 | 三个完整commit SHA和标签存在，配置固定 | DONE_REAL |
+| A14-E3-03 | 增量与clean行为对照 | 刘威 | C0=10、C1=12/15、C2=12/19均有日志 | DONE_REAL |
+| A14-E3-04 | Linux环境与原始跟踪 | 刘威 | 工具版本、strace、make数据库和失败日志已保存 | DONE_REAL |
+| A14-E3-05 | 一键运行与证据校验 | 刘威 | 新run-id不覆盖旧证据，SHA-256和Git版本可验证 | DONE_REAL |
+| A14-E3-06 | E3文档、贡献与仓库发布 | 刘威 | README、交付说明、验证记录、贡献与AI记录完整 | DONE |
+| A14-LATER-01 | BuildChecker实际图、声明图与自动MD/RD推断 | A14 | 真实检测结果与E3人工答案对照 | DEFERRED_TO_LATER_MILESTONE |
+| A14-LATER-02 | EChecker跨提交增量检测 | A14 | 基于C0图检测C1/C2并输出变化 | DEFERRED_TO_LATER_MILESTONE |
+| A14-E12-01 | 接入B14真实数据与MDFixer重检闭环 | A14/B14 | 真实DRAFT输入、MD交接、patch重检闭环 | DEFERRED_TO_E12 |
 
 ## 未决事项
 
 - A14 不负责 Moodle 或课程平台最终提交；仓库地址、commit SHA 和 ZIP 由课程提交负责人继续使用。
-- E3 决定历史构建命令快照是内部持久化还是升级契约公开 `build_commands_uri`。
-- E3 明确容器内系统调用跟踪所需权限和安全策略。
+- 后续EChecker实现需决定历史构建命令快照是内部持久化还是升级契约公开`build_commands_uri`。
+- E3证据来自WSL2原生Linux进程；容器内系统调用跟踪权限留到后续服务实现阶段确认。

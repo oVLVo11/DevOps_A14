@@ -1,0 +1,12 @@
+$ make
+cwd=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/md-rd-redundant
+started_utc=2026-10-08T03:28:53.328756+00:00
+exit_code=0
+
+[stdout]
+cc -c main.c -o main.o
+cc main.o -o app
+
+[stderr]
+make: Warning: File 'unused.h' has modification time 0.66 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.

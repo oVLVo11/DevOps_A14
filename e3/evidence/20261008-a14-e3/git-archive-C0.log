@@ -1,0 +1,8 @@
+$ git archive --format=tar '--output=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/C0.tar' 4445e4be50af6683b75017e7fa65c4f8212ea80e e3/fixtures/commits/project
+cwd=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14
+started_utc=2026-10-08T03:28:54.659201+00:00
+exit_code=0
+
+[stdout]
+
+[stderr]

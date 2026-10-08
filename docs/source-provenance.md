@@ -28,7 +28,7 @@
 ## 课程材料
 
 - `E2_需求与接口契约_20260910.pptx`：E2 范围、四服务协作、统一 Job、状态、错误、产物、校验和过程材料要求
-- `E3_并行测试基线_20260910.pptx`：E3 真实项目与并行测试准备，未作为 E2 真实运行证据
+- `E3_并行测试基线_20260910.pptx`：E3 MD/RD样例、C0/C1/C2、命令、日志、人工预期与Linux原始跟踪要求
 - `A14_协作确认消息.md`：B14 向 A14 提出的 DRAFT 契约与资料请求
 
 ## 论文材料
@@ -39,3 +39,10 @@
 - `_ASE_2025__Auto_fix_missing_dependency_errors.pdf`
 
 论文只作为系统职责、输入输出和算法边界依据。本 E2 包不声称复现实验指标。
+
+## E3样例与执行来源
+
+- 初始MD/RD源码结构参考本地课程`E4实验包/A-buildchecker/fixtures/md-rd`，纳入A14后新增独立README、人工答案、连续提交项目、运行脚本和证据校验。
+- C0/C1/C2均为A14仓库真实提交：`4445e4be50af6683b75017e7fa65c4f8212ea80e`、`37fcadb1eced8d2504b1d5e0bd96f3b8091568b1`、`59a3ce2b47461505143d020703e81bd8f68dd667`。
+- 正式E3证据在WSL2 Linux上于2026-10-08实际运行生成；环境和命令分别记录在`e3/evidence/20261008-a14-e3/environment.json`和`commands.json`。
+- B14截至复核时远程`main`为`eb2c62c9a3222cbcb25a8bc204348ce91b3c9ba8`，其DRAFT/MDFixer E3基线独立存在；A14没有复制其结果充当本组证据。

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "repository_url": "https://github.com/oVLVo11/DevOps_A14.git",
+  "project_path": "e3/fixtures/commits/project",
+  "configuration": {
+    "configuration_id": "a14-e3-linux-x86_64-gcc11-make43",
+    "build_command": "make clean && make",
+    "incremental_command": "make",
+    "verify_command": "./app",
+    "network": "DISABLED"
+  },
+  "versions": {
+    "C0": {
+      "tag": "a14-e3-c0",
+      "commit": "4445e4be50af6683b75017e7fa65c4f8212ea80e",
+      "purpose": "correct initial dependency declaration",
+      "expected_clean_output": "10"
+    },
+    "C1": {
+      "tag": "a14-e3-c1",
+      "commit": "37fcadb1eced8d2504b1d5e0bd96f3b8091568b1",
+      "purpose": "add feature.h include without declaring the dependency",
+      "expected_clean_output": "12"
+    },
+    "C2": {
+      "tag": "a14-e3-c2",
+      "commit": "59a3ce2b47461505143d020703e81bd8f68dd667",
+      "purpose": "change only CFLAGS by adding -DMODE=7",
+      "expected_incremental_output_from_c1": "12",
+      "expected_clean_output": "19"
+    }
+  }
+}

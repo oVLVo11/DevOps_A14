@@ -1,0 +1,362 @@
+[
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-01-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-02-initial-make.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-03-initial-app.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-04-incremental-after-config.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-05-stale-app.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-06-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-07-clean-rebuild.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-missing",
+    "exit_code": 0,
+    "log": "md-08-clean-app.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-redundant",
+    "exit_code": 0,
+    "log": "rd-01-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-redundant",
+    "exit_code": 0,
+    "log": "rd-02-initial-make.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/md-rd-redundant",
+    "exit_code": 0,
+    "log": "rd-03-after-unused-change.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/negative-missing-header",
+    "exit_code": 0,
+    "log": "failure-01-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/negative-missing-header",
+    "exit_code": 2,
+    "log": "failure-02-missing-header.log"
+  },
+  {
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/C0.tar",
+      "4445e4be50af6683b75017e7fa65c4f8212ea80e",
+      "e3/fixtures/commits/project"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "log": "git-archive-C0.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C0/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c0-01-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C0/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c0-02-make.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C0/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c0-03-app.log"
+  },
+  {
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/C1.tar",
+      "37fcadb1eced8d2504b1d5e0bd96f3b8091568b1",
+      "e3/fixtures/commits/project"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "log": "git-archive-C1.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-01-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-02-make.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-03-app.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-04-incremental-after-feature.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-05-stale-app.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-06-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-07-clean-rebuild.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c1-08-clean-app.log"
+  },
+  {
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/C1-for-C2.tar",
+      "37fcadb1eced8d2504b1d5e0bd96f3b8091568b1",
+      "e3/fixtures/commits/project"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "log": "git-archive-C1-for-C2.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-01-c1-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-02-c1-build.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-03-c1-app.log"
+  },
+  {
+    "command": [
+      "git",
+      "archive",
+      "--format=tar",
+      "--output=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/C2-source.tar",
+      "59a3ce2b47461505143d020703e81bd8f68dd667",
+      "e3/fixtures/commits/project"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "log": "git-archive-C2-source.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-04-incremental.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-05-incremental-app.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-06-clean.log"
+  },
+  {
+    "command": [
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-07-clean-rebuild.log"
+  },
+  {
+    "command": [
+      "./app"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C1-for-C2/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-08-clean-app.log"
+  },
+  {
+    "command": [
+      "make",
+      "-n",
+      "-B",
+      "main.o"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/versions/C2-source/e3/fixtures/commits/project",
+    "exit_code": 0,
+    "log": "c2-09-forced-command.log"
+  },
+  {
+    "command": [
+      "make",
+      "clean"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/linux-trace",
+    "exit_code": 0,
+    "log": "trace-01-clean.log"
+  },
+  {
+    "command": [
+      "strace",
+      "-ff",
+      "-o",
+      "trace.log",
+      "-e",
+      "trace=%file,%process",
+      "make"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/linux-trace",
+    "exit_code": 0,
+    "log": "trace-02-strace-make.log"
+  },
+  {
+    "command": [
+      "make",
+      "-pn"
+    ],
+    "cwd": "e3/work/20261008-a14-e3/linux-trace",
+    "exit_code": 0,
+    "log": "trace-03-make-database.log"
+  }
+]

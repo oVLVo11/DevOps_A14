@@ -1,0 +1,9 @@
+$ make clean
+cwd=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/versions/C0/e3/fixtures/commits/project
+started_utc=2026-10-08T03:28:57.164978+00:00
+exit_code=0
+
+[stdout]
+rm -f app main.o
+
+[stderr]

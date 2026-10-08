@@ -1,0 +1,14 @@
+$ make
+cwd=/mnt/c/Users/12116/Desktop/DevOps/项目/DevOps_A14/e3/work/20261008-a14-e3/negative-missing-header
+started_utc=2026-10-08T03:28:54.579297+00:00
+exit_code=2
+
+[stdout]
+cc -c main.c -o main.o
+
+[stderr]
+main.c:2:10: fatal error: config.h: No such file or directory
+    2 | #include "config.h"
+      |          ^~~~~~~~~~
+compilation terminated.
+make: *** [Makefile:11: main.o] Error 1
