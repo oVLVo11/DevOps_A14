@@ -1,0 +1,1 @@
+/* This header is declared by Make but never read by the compiler. */

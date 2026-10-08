@@ -7,3 +7,6 @@ __pycache__/
 # Generated submission archives
 /dist/
 *.zip
+
+# E3 generated workspaces. Committed evidence lives under /e3/evidence/.
+/e3/work/

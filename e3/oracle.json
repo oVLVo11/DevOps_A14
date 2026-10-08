@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "source": "INSTRUCTOR_ORACLE",
+  "scope": "project headers for the named target only",
+  "md_rd": {
+    "target": "main.o",
+    "findings": [
+      {
+        "type": "MISSING",
+        "dependency": "config.h",
+        "basis": "main.c includes config.h and the compiler reads it, but Makefile omits it from main.o prerequisites"
+      },
+      {
+        "type": "REDUNDANT",
+        "dependency": "unused.h",
+        "basis": "Makefile declares unused.h for main.o, but the compiler never reads it"
+      }
+    ]
+  },
+  "versions": {
+    "C0": {
+      "expected_findings": [],
+      "clean_output": "10"
+    },
+    "C1": {
+      "expected_findings": [
+        {
+          "type": "MISSING",
+          "target": "main.o",
+          "dependency": "feature.h"
+        }
+      ],
+      "clean_output": "12"
+    },
+    "C2": {
+      "expected_findings": [
+        {
+          "type": "MISSING",
+          "target": "main.o",
+          "dependency": "feature.h"
+        }
+      ],
+      "incremental_output_from_c1": "12",
+      "clean_output": "19",
+      "command_change": "CFLAGS changes from -O0 to -O0 -DMODE=7"
+    }
+  },
+  "warning": "Artificial labels define expected answers and must not be counted as detector output or accuracy evidence."
+}
