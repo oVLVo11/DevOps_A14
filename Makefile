@@ -31,7 +31,7 @@ build: .env | $(RUN)
 	$(COMPOSE) run --rm --no-deps $(SERVICE) cat /opt/toolchain.lock | tee $(RUN)/toolchain.lock
 
 test: .env | $(RUN)
-	timeout $(TIMEOUT) $(COMPOSE) run --rm -T --interactive=false $(SERVICE) pytest 2>&1 | tee $(RUN)/test.log; test $${PIPESTATUS[0]} -eq 0
+	timeout $(TIMEOUT) $(COMPOSE) run --rm -T --interactive=false $(SERVICE) python3 -m pytest 2>&1 | tee $(RUN)/test.log; test $${PIPESTATUS[0]} -eq 0
 
 smoke: .env | $(RUN)
 	timeout $(TIMEOUT) $(COMPOSE) run --rm -T --interactive=false $(SERVICE) python3 -m $(SERVICE) smoke | tee $(RUN)/smoke.json; test $${PIPESTATUS[0]} -eq 0
