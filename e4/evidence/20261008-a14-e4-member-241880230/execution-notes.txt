@@ -1,0 +1,14 @@
+This fresh clone and reproduction were executed remotely by Codex at 庄一凡's request.
+No human-only or personal execution declaration has been signed by the assistant.
+The spreadsheet contains no real Git email. The repo-local identity uses
+241880230@localhost, explicitly allowed for ordinary E4 members by the course
+A-group command manual. This is a local placeholder, not a claimed real email.
+Source, tests, Dockerfile, Compose, Makefile and dependency locks were not modified.
+No commit or push was performed. Existing member clone directories were not reused.
+STUDENT_ID was exported for Compose configuration so the evidence records the
+actual e4-buildchecker:241880230 image rather than the default local image.
+The fake-key file was staged only for the negative scan, then unstaged and removed.
+Failure logs, if any, are retained. Packaging checksums use portable relative paths.
+An initial wrapper preflight exited with SIGPIPE (141) at make --version | head.
+It did not reach make all. That wrapper pipeline was changed to sed -n '1p',
+and its unmodified logs and executed script are retained under attempts/.

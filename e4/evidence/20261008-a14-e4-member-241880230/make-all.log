@@ -1,0 +1,148 @@
+python3 scripts/doctor.py --out work/20261008-130807/env.json
+{
+  "time": "2026-10-08T05:08:07.113886+00:00",
+  "hostname": "iZbp106a3t3mzz3nfabuawZ",
+  "os": "Ubuntu 22.04.5 LTS",
+  "kernel": "5.15.0-191-generic",
+  "arch": "x86_64",
+  "spec": {
+    "cpus": 2,
+    "mem_gib": 3.5,
+    "disk_gib": 70.4
+  },
+  "tools": {
+    "docker": "29.1.3",
+    "compose": "2.40.3+ds1-0ubuntu1~22.04.1",
+    "buildx": "github.com/docker/buildx 0.30.1 0.30.1-0ubuntu1~22.04.1",
+    "git": "git version 2.34.1",
+    "make": "GNU Make 4.3",
+    "python3": "Python 3.10.12"
+  },
+  "problems": [],
+  "warnings": [
+    "cpus=2 低于建议值 4",
+    "mem_gib=3.5 低于建议值 8",
+    "disk_gib=70.4 低于建议值 100",
+    "Docker 未配置镜像加速，拉取基础镜像可能很慢"
+  ],
+  "docker_sock_gid": 121,
+  "registry_mirrors": [],
+  "git": {
+    "user.name": "241880230",
+    "user.email": "241880230@localhost"
+  }
+}
+
+环境自检：通过
+cp .env.example .env && chmod 600 .env
+已从 .env.example 生成 .env（权限 600），需要时再填写。
+docker compose -p e4-buildchecker-241880230 build --progress=plain 2>&1 | tee work/20261008-130807/build.log; test ${PIPESTATUS[0]} -eq 0
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+#1 [internal] load local bake definitions
+#1 reading from stdin 628B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.70kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 106B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 8.06kB 0.0s done
+#5 DONE 0.0s
+
+#6 [1/8] FROM m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
+#6 resolve m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74 0.0s done
+#6 DONE 0.0s
+
+#7 [3/8] COPY requirements-dev.lock /tmp/requirements-dev.lock
+#7 CACHED
+
+#8 [5/8] RUN useradd --create-home --uid 10001 app && install -d -o app -g app /app
+#8 CACHED
+
+#9 [7/8] COPY --chown=app:app services/buildchecker/ /app/
+#9 CACHED
+
+#10 [4/8] RUN pip install --no-cache-dir --require-hashes -r /tmp/requirements-dev.lock  && pip freeze | sed 's/^/pip:/' >> /opt/toolchain.lock
+#10 CACHED
+
+#11 [6/8] WORKDIR /app
+#11 CACHED
+
+#12 [2/8] RUN sed -i       -e "s|http://deb.debian.org/debian-security|https://mirrors.aliyun.com/debian-security|g"       -e "s|http://deb.debian.org/debian|https://mirrors.aliyun.com/debian|g"       /etc/apt/sources.list.d/debian.sources  && apt-get update  && apt-get install -y --no-install-recommends gcc make libc6-dev strace git  && rm -rf /var/lib/apt/lists/*  && dpkg-query -W -f='${Package}=${Version}\n' gcc make libc6-dev strace git > /opt/toolchain.lock  && echo "python3=$(python3 -c 'import platform; print(platform.python_version())')" >> /opt/toolchain.lock  && echo "arch=$(dpkg --print-architecture)" >> /opt/toolchain.lock
+#12 CACHED
+
+#13 [8/8] COPY --chown=app:app fixtures/ /app/fixtures/
+#13 CACHED
+
+#14 exporting to image
+#14 exporting layers done
+#14 exporting manifest sha256:30095c14c478af75cb9f0c306e3f3a8d2c20d4a6818047f191d9ac9e5f3a7859 done
+#14 exporting config sha256:d49c9db644ada3b6b84e8d2c14c7d5d69d74758276b18d3c287da9a5fa41c9f3 done
+#14 exporting attestation manifest sha256:2fa08bcf61df5793466f989520accd391a154ac9cecdec5d8bca18190cc0a4f4 0.0s done
+#14 exporting manifest list sha256:c0a10cf72e51ebae7047ff03c07e8e3a5f2c433d1f6fd9894df99a859d671278 done
+#14 naming to docker.io/library/e4-buildchecker:241880230 done
+#14 unpacking to docker.io/library/e4-buildchecker:241880230 done
+#14 DONE 0.1s
+
+#15 resolving provenance for metadata file
+#15 DONE 0.0s
+ e4-buildchecker:241880230  Built
+docker image inspect e4-buildchecker:241880230 --format '{"image":"e4-buildchecker:241880230","id":"{{.Id}}","arch":"{{.Architecture}}","created":"{{.Created}}"}' | tee work/20261008-130807/image.json
+{"image":"e4-buildchecker:241880230","id":"sha256:c0a10cf72e51ebae7047ff03c07e8e3a5f2c433d1f6fd9894df99a859d671278","arch":"amd64","created":"2026-10-08T12:18:41.80855073+08:00"}
+docker compose -p e4-buildchecker-241880230 run --rm --no-deps buildchecker cat /opt/toolchain.lock | tee work/20261008-130807/toolchain.lock
+gcc=4:14.2.0-1
+git=1:2.47.3-0+deb13u1
+libc6-dev=2.41-12+deb13u4
+make=4.4.1-2
+strace=6.13+ds-1
+python3=3.13.14
+arch=amd64
+pip:iniconfig==2.3.0
+pip:packaging==26.3
+pip:pluggy==1.6.0
+pip:Pygments==2.21.0
+pip:pytest==8.4.2
+timeout 600 docker compose -p e4-buildchecker-241880230 run --rm -T --interactive=false buildchecker python3 -m pytest 2>&1 | tee work/20261008-130807/test.log; test ${PIPESTATUS[0]} -eq 0
+============================= test session starts ==============================
+platform linux -- Python 3.13.14, pytest-8.4.2, pluggy-1.6.0
+rootdir: /app
+configfile: pytest.ini
+testpaths: tests
+collected 3 items
+
+tests/test_cli.py ...                                                    [100%]
+
+============================== 3 passed in 0.01s ===============================
+timeout 600 docker compose -p e4-buildchecker-241880230 run --rm -T --interactive=false buildchecker python3 -m buildchecker smoke | tee work/20261008-130807/smoke.json; test ${PIPESTATUS[0]} -eq 0
+{
+  "fixture": "fixtures/md-rd",
+  "tools": {
+    "make": "GNU Make 4.4.1",
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "strace": "strace -- version 6.13"
+  },
+  "make_exit_code": 0,
+  "make_output": [
+    "cc -c main.c -o main.o",
+    "cc main.o -o app"
+  ],
+  "app_output": "1",
+  "trace_lines": 1206,
+  "config_h_opened": [
+    "15    openat(AT_FDCWD, \"config.h\", O_RDONLY|O_NOCTTY) = 4"
+  ],
+  "unused_h_opened": [],
+  "passed": true,
+  "note": "只说明环境可用；config.h / unused.h 的结论留到 E5 由各组自己推导"
+}
+python3 scripts/secret_scan.py . --history --image e4-buildchecker:241880230 | tee work/20261008-130807/secret-scan.txt; test ${PIPESTATUS[0]} -eq 0
+密钥检查：未发现问题（文件 154 个，含 Git 历史，含镜像 e4-buildchecker:241880230）
+证据目录：work/20261008-130807

@@ -69,6 +69,7 @@ make all
 
 ```sh
 python3 e4/scripts/verify_evidence.py e4/evidence/20261008-a14-e4
+python3 e4/scripts/verify_member_evidence.py e4/evidence/20261008-a14-e4-member-241880230
 ```
 
 ## 阶段边界

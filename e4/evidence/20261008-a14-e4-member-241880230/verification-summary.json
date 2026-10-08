@@ -1,0 +1,31 @@
+{
+  "source_sha": "0a23b30d5c1e6eef118ce8d422c4a5b0444215f5",
+  "make_all_exit": 0,
+  "env_problems": [],
+  "env_warnings": [
+    "cpus=2 低于建议值 4",
+    "mem_gib=3.5 低于建议值 8",
+    "disk_gib=70.4 低于建议值 100",
+    "Docker 未配置镜像加速，拉取基础镜像可能很慢"
+  ],
+  "pytest": "3 passed",
+  "smoke_passed": true,
+  "app_output": "1",
+  "config_h_opened": true,
+  "unused_h_opened": false,
+  "toolchain_sha256": "bc70f4e9e436d2567c88588171d7fd4575a614c442874baa089407106bbf9358",
+  "fake_key_detected_and_masked": true,
+  "clean_secret_scan_passed": true,
+  "git_worktree_clean": true,
+  "env_mode": "600",
+  "env_tracked": false,
+  "image_runtime": {
+    "user": "app",
+    "architecture": "amd64",
+    "os": "linux"
+  },
+  "execution_mode": "Codex-assisted remote execution authorized by 庄一凡",
+  "git_email": "241880230@localhost",
+  "git_email_kind": "local placeholder allowed by course A-group manual",
+  "human_personal_attestation": "pending; not signed by the assistant"
+}
