@@ -10,3 +10,12 @@ __pycache__/
 
 # E3 generated workspaces. Committed evidence lives under /e3/evidence/.
 /e3/work/
+
+# E4 local configuration and generated evidence. Selected evidence may be force-added.
+/.env
+/.env.*
+!/.env.example
+/work/
+*.pem
+*.key
+.pytest_cache/

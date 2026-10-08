@@ -29,6 +29,9 @@
 
 - `E2_需求与接口契约_20260910.pptx`：E2 范围、四服务协作、统一 Job、状态、错误、产物、校验和过程材料要求
 - `E3_并行测试基线_20260910.pptx`：E3 MD/RD样例、C0/C1/C2、命令、日志、人工预期与Linux原始跟踪要求
+- `E4/E4_20260929.pptx`：E4可重复工程环境、容器、依赖固定、测试、密钥与重跑验收要求
+- `E4/E4_A组全流程命令手册_20260929.md`：A组服务器连接、仓库初始化、`make all`、证据核对与E5接续说明
+- `E4/E4实验包/A-buildchecker`：A14 E4 BuildChecker服务骨架与官方样例
 - `A14_协作确认消息.md`：B14 向 A14 提出的 DRAFT 契约与资料请求
 
 ## 论文材料
@@ -46,3 +49,9 @@
 - C0/C1/C2均为A14仓库真实提交：`4445e4be50af6683b75017e7fa65c4f8212ea80e`、`37fcadb1eced8d2504b1d5e0bd96f3b8091568b1`、`59a3ce2b47461505143d020703e81bd8f68dd667`。
 - 正式E3证据在WSL2 Linux上于2026-10-08实际运行生成；环境和命令分别记录在`e3/evidence/20261008-a14-e3/environment.json`和`commands.json`。
 - B14截至复核时远程`main`为`eb2c62c9a3222cbcb25a8bc204348ce91b3c9ba8`，其DRAFT/MDFixer E3基线独立存在；A14没有复制其结果充当本组证据。
+
+## E4模板来源与边界
+
+- E4根目录的`Dockerfile`、Compose、Makefile、依赖锁、BuildChecker骨架、测试、服务器自检和密钥扫描以课程`A-buildchecker`模板为基线，整合进既有A14仓库时保留E2/E3内容。
+- B组实验包只用于核对职责边界；A14没有复制DRAFT服务、Docker客户端或`docker.sock`配置。
+- E4正式运行证据只能由课程分配的Ubuntu服务器生成。未获得服务器访问并完成两次重跑前，不把本地文件检查记作E4完成证据。

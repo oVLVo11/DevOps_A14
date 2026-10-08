@@ -1,3 +1,16 @@
 # Artifact SHA-256 values bind exact bytes; Git must not normalize line endings.
 /contracts/artifacts/** -text
 /e3/evidence/** -text
+
+# E4 runs on Linux; keep executable/configuration inputs in LF form on every checkout.
+Makefile text eol=lf
+Dockerfile text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.yaml text eol=lf
+.env.example text eol=lf
+requirements*.in text eol=lf
+requirements*.lock text eol=lf
+
+# Selected E4 evidence binds exact bytes when it is published later.
+/e4/evidence/** -text
