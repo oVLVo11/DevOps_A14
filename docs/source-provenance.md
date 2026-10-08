@@ -55,3 +55,4 @@
 - E4根目录的`Dockerfile`、Compose、Makefile、依赖锁、BuildChecker骨架、测试、服务器自检和密钥扫描以课程`A-buildchecker`模板为基线，整合进既有A14仓库时保留E2/E3内容。
 - B组实验包只用于核对职责边界；A14没有复制DRAFT服务、Docker客户端或`docker.sock`配置。
 - E4正式运行证据只能由课程分配的Ubuntu服务器生成。未获得服务器访问并完成两次重跑前，不把本地文件检查记作E4完成证据。
+- A14课程ECS在容器构建中访问`deb.debian.org`连续两次停滞；`mirrors.aliyun.com`的Debian主源与安全源经同一服务器实际访问返回成功，因此E4 Dockerfile显式使用该镜像源，apt签名校验保持启用。

@@ -3,12 +3,19 @@
 ARG BASE_IMAGE=m.daocloud.io/docker.io/library/python@sha256:f82c96458eedc847b233e582eb31336f4954b39cae020b6dcf5b3ed0e5cbcd74
 FROM ${BASE_IMAGE}
 
+# 课程阿里云 ECS 到 Debian 官方源可能长时间无进展；镜像站内容仍由 apt 签名校验。
+ARG DEBIAN_MIRROR=https://mirrors.aliyun.com
+
 ENV LC_ALL=C.UTF-8 \
     TZ=UTC \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-RUN apt-get update \
+RUN sed -i \
+      -e "s|http://deb.debian.org/debian-security|${DEBIAN_MIRROR}/debian-security|g" \
+      -e "s|http://deb.debian.org/debian|${DEBIAN_MIRROR}/debian|g" \
+      /etc/apt/sources.list.d/debian.sources \
+ && apt-get update \
  && apt-get install -y --no-install-recommends gcc make libc6-dev strace git \
  && rm -rf /var/lib/apt/lists/* \
  && dpkg-query -W -f='${Package}=${Version}\n' gcc make libc6-dev strace git > /opt/toolchain.lock \
