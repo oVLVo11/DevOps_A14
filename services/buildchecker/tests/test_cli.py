@@ -1,5 +1,7 @@
 """E4 骨架的单元测试。"""
 
+from unittest.mock import patch
+
 from buildchecker import __version__
 from buildchecker.cli import build_parser, main
 from buildchecker.smoke import files_opened
@@ -25,3 +27,16 @@ def test_files_opened_matches_relative_and_absolute_paths():
     )
     assert len(files_opened(trace, "config.h")) == 2
     assert files_opened(trace, "unused.h") == []
+
+
+def test_full_check_findings_are_successful_analysis_but_fail_optional_gate(capsys):
+    """A detected MD is a successful FULL_CHECK, even when the CLI gate rejects it."""
+    report = {
+        "status": "SUCCEEDED",
+        "findings": [{"type": "MISSING", "target": "main.o", "dependency": "config.h"}],
+    }
+    with patch("buildchecker.cli.full_check", return_value=report) as check:
+        assert main(["full-check", "--out", "work/report"]) == 0
+        assert main(["full-check", "--out", "work/report", "--fail-on-findings"]) == 1
+    assert check.call_count == 2
+    assert '"status": "SUCCEEDED"' in capsys.readouterr().out

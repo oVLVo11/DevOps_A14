@@ -1,8 +1,8 @@
-# DevOps A14 · E2接口契约、E3测试基线与E4工程环境
+# DevOps A14 · E2–E7 阶段成果
 
 A14 负责论文项目 BuildChecker 与 EChecker，对应统一任务模型中的 `FULL_CHECK` 和 `INCREMENTAL_CHECK`。配对组 B14 负责 DRAFT 与 MDFixer，对应 `DRAFT` 和 `REPAIR`。
 
-本仓库交付E2接口契约、E3并行测试基线和E4可重复工程环境。E2包含人工契约样例、可读取产物、离线校验器和设计过程记录；E3包含MD/RD故障项目、C0/C1/C2真实Git版本、人工预期、Linux运行日志与原始跟踪；E4包含BuildChecker服务骨架、容器镜像、Compose、依赖锁、测试、冒烟与密钥检查。E4仍不声称已经实现BuildChecker/EChecker完整算法或完成跨组真实服务联调。
+本仓库交付E2接口契约、E3并行测试基线、E4可重复工程环境，以及E5–E7的A组教学范围检测器、原始取证、故障门禁与GitHub CI配置。E5–E7代码覆盖单个GNU Make进程和每项构建任务只有一个最终输出的样例；EChecker跨提交增量检测、真实HTTP服务与跨组联调仍属于后续阶段。
 
 A14 负责将本组成果 commit 并 push 到 A14 GitHub 仓库；A14 不负责在 Moodle 上传压缩包或完成课程平台最终提交。
 
@@ -16,6 +16,9 @@ A14 负责将本组成果 commit 并 push 到 A14 GitHub 仓库；A14 不负责�
 
 ## 交付入口
 
+- [A14 E5–E7 执行与交付](docs/A14_E5_E7_执行与交付.md)
+- [A14 E5–E7 实验报告](docs/A14_E5_E7_实验报告.md)
+- [A14 E5–E7 验收记录](docs/A14_E5_E7_验收记录.csv)
 - [A14 E4可重复工程环境](e4/README.md)
 - [A14 E4交付说明](e4/A14_E4交付说明.md)
 - [A14 E4服务器验证记录](e4/验证记录_20261008.md)
@@ -74,4 +77,4 @@ python3 e4/scripts/verify_member_evidence.py e4/evidence/20261008-a14-e4-member-
 
 ## 阶段边界
 
-E2样例中的`example.invalid`、重复数字提交SHA、重复字母镜像digest、日志和检测报告均为`MANUAL_FIXTURE`。E3的命令与程序输出来自真实Linux执行，但`oracle.json`仍是人工答案。E4的`smoke`只验证容器内工具链和跟踪链路。三个阶段都没有把人工答案或冒烟结果冒充正式检测器输出。
+E2样例中的`example.invalid`、重复数字提交SHA、重复字母镜像digest、日志和检测报告均为`MANUAL_FIXTURE`。E3的命令与程序输出来自真实Linux执行，但`oracle.json`仍是人工答案。E4的`smoke`只验证容器内工具链和跟踪链路。E5–E7必须使用本组提交的源码在课程Linux服务器上生成新证据；仓库中的课程参考材料和Windows本地测试不代替本组云端运行或GitHub检查记录。
