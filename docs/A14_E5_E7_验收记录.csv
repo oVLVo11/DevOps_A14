@@ -3,7 +3,7 @@ C01,A14,环境,云主机与Docker,PASS,work/a14-e5e7-20261025-01/environment.jso
 C02,A14,E5,真实复现与原始差异,PASS,work/a14-e5e7-20261025-01/e5/,原始trace与Make数据库及校验日志
 C03,A14,E6,输入哈希报告日志,PASS,work/a14-e5e7-20261025-01/e6-verify.log,修复前后仅Makefile改变
 C04,A14,E7,自主扩展测试,PASS,work/a14-e5e7-20261025-01/build/unit-tests/stdout.log,云端16项服务测试通过
-C05,A14,CI,正常失败恢复及artifact,PENDING,,三次真实运行URL
-C06,A14,CI,必需检查与实际拒绝合并,PASS,work/ci-rejection/merge-rejection.log,PR #2 返回 HTTP 405 且 OPEN/BLOCKED
+C05,A14,CI,正常失败恢复及artifact,PASS,work/ci-artifacts/,正常失败恢复三次GitHub运行与原始artifact已备份且PR #2恢复后合并
+C06,A14,CI,必需检查与实际拒绝合并,PASS,work/ci-rejection/merge-rejection.log,PR #2 错误提交返回 HTTP 405 且修正后通过必需检查并合并
 A01,A14,E6,MD/RD精确证据与修复,PASS,work/a14-e5e7-20261025-01/e6-before/evidence/findings.json,修复后findings为空
 A02,A14,E7,三次一致及故障场景,PASS,work/a14-e5e7-20261025-01/e7/gate/gate-result.json,八项完整门禁通过
