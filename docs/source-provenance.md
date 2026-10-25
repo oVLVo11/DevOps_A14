@@ -57,3 +57,11 @@
 - E4正式运行证据只能由课程分配的Ubuntu服务器生成。未获得服务器访问并完成两次重跑前，不把本地文件检查记作E4完成证据。
 - A14课程ECS在容器构建中访问`deb.debian.org`连续两次停滞；`mirrors.aliyun.com`的Debian主源与安全源经同一服务器实际访问返回成功，因此E4 Dockerfile显式使用该镜像源，apt签名校验保持启用。
 - 课程ECS镜像中直接执行pytest控制台入口无法导入`/app/buildchecker`，而`python3 -m pytest`在同一镜像中通过三项测试；Makefile据此使用模块方式启动固定版本的pytest。
+
+## E5–E7 学生包来源与本仓库改动
+
+- 来源：`E5-E7/DevOps_20261020_Course/02_学生实验/DevOps_1020_Student_Cloud/` 是课程提供的完整解压学生实验包；其中 `labs/A-buildchecker` 为 A 轨道教学参考实现，`docs/02_A轨道操作指南.md`、`docs/04_GitHub_CI与合并门禁.md`、`docs/05_验收清单.md` 给出课堂操作和验收口径。
+- 本仓库参考并纳入 A 轨道的 `fullcheck.py`、12 项对应测试、云主机阶段驱动、E6 证据校验、E7 八项门禁、6 项独立判定测试、GitHub 工作流、分支保护配置和失败/修正测试样例；均保留教学模型边界说明。
+- A14 适配：保留先前在本组 E4 ECS 上验证的 Dockerfile、依赖锁和服务骨架；增加现有 CLI 的 `full-check` 子命令、A14 专属镜像标签、`python3 -m pytest` 容器测试方式、一键证据驱动、E5 原始证据校验及一项结果语义回归测试。
+- 课程包的 `03_验收与实验记录/实验记录` 是教学参考记录，不是 A14 的运行证据。本组 E5–E7 的 `work/` 原始日志、镜像 ID、GitHub run/PR 和合并记录必须由本组源码真实运行后另行填写。
+- A14 本组 E5–E7 首次实际运行：2026-10-25 在课程 Ubuntu 22.04.5 ECS 的独立目录中克隆 `1c3a318581701ad557d88574881267cc492a92b2`，执行 `bash scripts/run_a14_e5_e7.sh 20261025-01`；310 个证据文件及本地备份摘要均复核通过。详细结果见 `docs/A14_E5_E7_实验报告.md`，原始工作目录在 `work/a14-e5e7-20261025-01/`，由 `.gitignore` 排除并单独备份。
