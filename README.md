@@ -17,6 +17,7 @@ A14 负责将本组成果 commit 并 push 到 A14 GitHub 仓库；A14 不负责�
 ## 交付入口
 
 - [A14 E5–E7 执行与交付](docs/A14_E5_E7_执行与交付.md)
+- [A14 E8–E10 推进标准](docs/A14_E8_E10_推进标准.md)
 - [A14 E5–E7 实验报告](docs/A14_E5_E7_实验报告.md)
 - [A14 E5–E7 验收记录](docs/A14_E5_E7_验收记录.csv)
 - [A14 E4可重复工程环境](e4/README.md)
