@@ -31,6 +31,29 @@ class ProfileTests(unittest.TestCase):
         self.assertEqual(result['reused'],[])
         self.assertEqual(result['refreshed'],['main.o','helper.o'])
 
+    def test_declaration_change_reuses_actual_graph_and_resolves_md(self):
+        old=scan(self.p)
+        makefile=self.p/'Makefile'
+        makefile.write_text(makefile.read_text().replace('main.c unused.h','main.c unused.h config.h'))
+        commit(self.p,'declare config header')
+        result=scan(self.p,old)
+        self.assertEqual(result['actual'],old['actual'])
+        self.assertEqual(result['reused'],['main.o','helper.o'])
+        self.assertIn(['MISSING','main.o','config.h'],result['resolved'])
+        self.assertEqual([(x['type'],x['dependency']) for x in result['findings']],[('REDUNDANT','unused.h')])
+
+    def test_header_configuration_change_refreshes_without_new_edge(self):
+        old=scan(self.p)
+        (self.p/'config.h').write_text('#define VALUE 2\n')
+        commit(self.p,'header value change')
+        for _ in range(5):
+            incremental=scan(self.p,old)
+            full=scan(self.p)
+            self.assertEqual(incremental['actual'],full['actual'])
+            self.assertEqual(incremental['declared'],full['declared'])
+            self.assertEqual(incremental['findings'],full['findings'])
+            self.assertEqual(incremental['refreshed'],['main.o','helper.o'])
+
     def test_patch_preserves_redundant_dependency(self):
         r=scan(self.p);diff,plan=patch(self.p,r)
         self.assertIn('+main.o: main.c unused.h config.h',diff)
