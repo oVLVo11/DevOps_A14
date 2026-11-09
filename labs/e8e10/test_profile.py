@@ -21,6 +21,16 @@ class ProfileTests(unittest.TestCase):
         r=scan(self.p,old)
         self.assertIn(['MISSING','main.o','extra.h'],r['added']);self.assertEqual(len(r['refreshed']),2)
 
+    def test_indirect_header_include_invalidates_history(self):
+        old=scan(self.p)
+        (self.p/'config.h').write_text('#include "extra.h"\n#define VALUE 1\n')
+        commit(self.p,'indirect header include')
+        result=scan(self.p,old)
+        self.assertEqual(result['actual']['main.o'],['config.h','extra.h','main.c'])
+        self.assertIn(['MISSING','main.o','extra.h'],result['added'])
+        self.assertEqual(result['reused'],[])
+        self.assertEqual(result['refreshed'],['main.o','helper.o'])
+
     def test_patch_preserves_redundant_dependency(self):
         r=scan(self.p);diff,plan=patch(self.p,r)
         self.assertIn('+main.o: main.c unused.h config.h',diff)
