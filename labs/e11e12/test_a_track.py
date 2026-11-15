@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import a_track
+import recheck
 sys.path.insert(0, str(a_track.ROOT / "validator"))
 from validate import schema_check
 
@@ -77,6 +78,20 @@ class ATrackContractTests(unittest.TestCase):
         self.assertEqual(changed["added"], [["MISSING", "main.o", "feature.h"]])
         self.assertEqual(changed["refreshed"], ["main.o"])
         self.assertEqual(changed["reused"], [])
+
+    def test_recheck_rejects_stale_report_and_changed_patch(self):
+        finding = [{"type": "MISSING", "target": "main.o", "dependency": "feature.h"}]
+        report = a_track.report(self.repo, "a" * 40, self.cfg, "job-1", finding,
+                                self.makefile, "STATIC_INFERENCE", ("main.o",))
+        self.assertEqual(recheck.check_md_report(report, self.repo, "a" * 40, self.cfg),
+                         {("main.o", "feature.h")})
+        with self.assertRaisesRegex(ValueError, "STALE_REPORT"):
+            recheck.check_md_report(report, self.repo, "b" * 40, self.cfg)
+        patch_file = self.root / "fix.patch"
+        patch_file.write_text("diff --git a/Makefile b/Makefile\n--- a/Makefile\n+++ b/Makefile\n"
+                              "@@ -1 +1 @@\n-main.o: main.c unused.h\n+main.o: main.c unused.h feature.h\n")
+        with self.assertRaisesRegex(ValueError, "ARTIFACT_HASH_MISMATCH"):
+            recheck.check_patch(patch_file, "0" * 64, Path("Makefile"))
 
 
 if __name__ == "__main__":

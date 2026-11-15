@@ -22,6 +22,7 @@ jobs:
       - name: Check A14 E3 commits with real build traces
         run: |
           cfg="ci-${RUNNER_OS}-$(cc -dumpmachine)-$(cc -dumpfullversion)-$(make --version | head -1 | tr ' ' '_')"
+          echo "CONFIGURATION_ID=$cfg" >> "$GITHUB_ENV"
           python3 labs/e11e12/a_track.py \
             --repo . --project-path e3/fixtures/commits/project \
             --base 4445e4be50af6683b75017e7fa65c4f8212ea80e \
@@ -29,9 +30,24 @@ jobs:
             --repository-url https://github.com/oVLVo11/DevOps_A14.git \
             --configuration-id "$cfg" \
             --out work/ci-e11-a-e3
+      - name: Recheck a local reference patch
+        run: |
+          md=$(find work/ci-e11-a-e3/artifacts -name md.json -print -quit)
+          patch=labs/e11e12/fixtures/e3-c1-reference.patch
+          sha=$(sha256sum "$patch" | cut -d ' ' -f1)
+          python3 labs/e11e12/recheck.py \
+            --repo . --project-path e3/fixtures/commits/project \
+            --target 37fcadb1eced8d2504b1d5e0bd96f3b8091568b1 \
+            --patch "$patch" --patch-uri artifact://a14-test/job-reference/fix.patch \
+            --patch-sha256 "$sha" --md-report "$md" \
+            --repository-url https://github.com/oVLVo11/DevOps_A14.git \
+            --configuration-id "$CONFIGURATION_ID" --expected-output 12 \
+            --out work/ci-e11-a-reference-recheck
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: e11-a-evidence-${{ github.run_id }}
-          path: work/ci-e11-a-e3/
+          path: |
+            work/ci-e11-a-e3/
+            work/ci-e11-a-reference-recheck/
           retention-days: 14
