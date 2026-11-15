@@ -69,8 +69,8 @@ def recheck(repo, target, project_path, patch, patch_uri, patch_sha256, md_repor
         project = source / project_path
         if not (project / "Makefile").is_file():
             raise ValueError("Target Makefile missing")
-        execute(["git", "apply", "--check", str(patch)], source, out / "patch-check.log", 30)
-        execute(["git", "apply", str(patch)], source, out / "patch-apply.log", 30)
+        execute(["git", "apply", "--unidiff-zero", "--check", str(patch)], source, out / "patch-check.log", 30)
+        execute(["git", "apply", "--unidiff-zero", str(patch)], source, out / "patch-apply.log", 30)
         execute(["make", "clean"], project, out / "clean.log", 120)
         execute(["make", "app"], project, out / "build.log", 120)
         observed = execute([str(project / "app")], project, out / "verify.log", 30)
