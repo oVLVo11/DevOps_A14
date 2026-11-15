@@ -207,6 +207,10 @@ def run(repo, base, target, out, repo_url, configuration_id, project_path=Path("
         md_report = {**target_report, "findings": [f for f in target_report["findings"] if f["type"] == "MISSING"]}
         if not md_report["findings"]:
             raise ValueError("No MD to hand off to B14")
+        sys.path.insert(0, str(ROOT / "validator"))
+        from validate import schema_check
+        for checked in (base_report, target_report, md_report):
+            schema_check(checked, "Report")
         base_records = [
             publish(out, baseline_job, "actual.json", "ACTUAL_GRAPH",
                     graph(repo_url, base, configuration_id, baseline_job, "ACTUAL_GRAPH", base_actual, "DYNAMIC_TRACE"),
