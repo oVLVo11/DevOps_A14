@@ -1,0 +1,37 @@
+name: E11 A integration
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  e11-a:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install build trace tool
+        run: sudo apt-get update && sudo apt-get install -y strace
+      - name: Check A-track and existing contract
+        run: |
+          python3 -m unittest discover -s labs/e11e12 -p 'test_*.py' -v
+          python3 validator/validate.py --suite
+      - name: Check A14 E3 commits with real build traces
+        run: |
+          cfg="ci-${RUNNER_OS}-$(cc -dumpmachine)-$(cc -dumpfullversion)-$(make --version | head -1 | tr ' ' '_')"
+          python3 labs/e11e12/a_track.py \
+            --repo . --project-path e3/fixtures/commits/project \
+            --base 4445e4be50af6683b75017e7fa65c4f8212ea80e \
+            --target 37fcadb1eced8d2504b1d5e0bd96f3b8091568b1 \
+            --repository-url https://github.com/oVLVo11/DevOps_A14.git \
+            --configuration-id "$cfg" \
+            --out work/ci-e11-a-e3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e11-a-evidence-${{ github.run_id }}
+          path: work/ci-e11-a-e3/
+          retention-days: 14
