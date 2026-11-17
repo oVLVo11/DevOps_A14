@@ -17,8 +17,10 @@
 
 本记录自身提交后应以 PR 页面显示的最新 head 与检查状态为最终 CI 依据，不能将旧提交的成功误写为新提交的成功。
 
+后续提交 `73dc5c33d45edef23dac7dace69452a9f10cf23a` 的三项工作流也全部为 `success`：[E11 A](https://github.com/oVLVo11/DevOps_A14/actions/runs/44076545541)、[E8–E10](https://github.com/oVLVo11/DevOps_A14/actions/runs/44076545580)、[E7](https://github.com/oVLVo11/DevOps_A14/actions/runs/44076545560)。
+
 ## 在线 PR 状态与剩余动作
 
-本轮核验时，#8 为 `draft`、`mergeable=true`，尚无组内 review；PR 描述仍是早期联调状态，需改成当前报告与正式最终回执。GitHub 连接器更新 PR 返回 403，当前浏览器未登录，因此没有把本地完成的验收冒充为在线 PR 已修改。取得仓库写权限后，更新 #8 描述并转为待审；由组内成员审核 #7、#8，再依课程安排合并。AI 自检和 CI 成功不能代替组内 review。
+本轮最初核验时，#8 为草稿且描述仍停留在早期联调。GitHub 连接器写入返回 403、浏览器未登录；随后通过本机已有 GitHub 授权更新了 #8 描述，内容指向个人报告与正式最终回执，并将 #8 转为待审。再次查询确认 `draft=false`、`mergeable=true`、当前仍无组内 review、尚未合并。#7 也尚未合并；应由组内成员审核 #7、#8，再依课程安排合并。AI 自检和 CI 成功不能代替组内 review。
 
-PR 描述应至少指向本目录的个人报告、ADR、AI 记录，以及 `handoff/e12/` 中 A14 C0/C1 检测、新 URI 复验、B14 正式最终回执三份 ZIP；说明课程示例范围、同一配置/镜像/trace、`source` 的 1.0 契约边界和论文教学实现边界。
+当前 PR 描述已指向本目录的个人报告、ADR、AI 记录，以及 `handoff/e12/` 中新 URI 复验、B14 正式最终回执等证据；说明课程示例范围、共同 trace、`source` 的 1.0 契约边界和论文教学实现边界。
