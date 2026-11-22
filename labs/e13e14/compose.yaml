@@ -3,6 +3,7 @@ x-common: &common
   image: ${E14_IMAGE:?set E14_IMAGE}
   pull_policy: never
   restart: unless-stopped
+  init: true
   user: "${E14_UID:-1000}:${E14_GID:-1000}"
   working_dir: /course
   environment:

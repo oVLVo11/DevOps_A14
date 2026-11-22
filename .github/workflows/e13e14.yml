@@ -55,7 +55,7 @@ jobs:
       - name: Run E13 visible matrix on A14 input
         run: |
           set -euo pipefail
-          docker run --rm --network bridge --cap-add SYS_PTRACE \
+          docker run --rm --init --network bridge --cap-add SYS_PTRACE \
             --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" -e HOME=/tmp \
             -v "$PWD:/course" -v /var/run/docker.sock:/var/run/docker.sock -w /course "$E14_IMAGE" \
             python3 labs/e13e14/run_e13.py --request data/e13-a14/e12.json --out work/e13-a14-ci \

@@ -59,17 +59,32 @@ def execute(argv, stdout, stderr, timeout):
             except ProcessLookupError:
                 pass
             returncode = proc.wait()
-            try:
-                os.killpg(proc.pid, 0)
-            except ProcessLookupError:
-                group_alive = False
-            else:
-                group_alive = True
+            # A terminated child may briefly remain as a zombie until init reaps it.
+            deadline = time.monotonic() + 2
+            while True:
+                members = process_group_members(proc.pid)
+                live = [entry for entry in members if entry['state'] not in ('Z', 'X')]
+                if not members or time.monotonic() >= deadline:
+                    break
+                time.sleep(.025)
             Path(stdout).with_suffix('.timeout.json').write_text(json.dumps({
                 'pid': proc.pid, 'process_group': proc.pid, 'returncode': returncode,
-                'process_group_alive_after_wait': group_alive, 'timeout_seconds': timeout,
+                'process_group_alive_after_wait': bool(live),
+                'remaining_group_members': members, 'timeout_seconds': timeout,
             }) + '\n', encoding='utf-8')
             raise TimeoutError(f"Docker client command exceeded {timeout}s")
+
+
+def process_group_members(group):
+    members = []
+    for path in Path('/proc').glob('[0-9]*/stat'):
+        try:
+            fields = path.read_text().rsplit(')', 1)[1].split()
+        except (FileNotFoundError, ProcessLookupError):
+            continue
+        if int(fields[2]) == group:
+            members.append({'pid': int(path.parent.name), 'state': fields[0]})
+    return members
 
 def classify_failure(text):
     if re.search(r"/bin/sh:.*\bmake: (?:not found|command not found)", text):
