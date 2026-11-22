@@ -3,7 +3,7 @@ x-common: &common
   image: ${E14_IMAGE:?set E14_IMAGE}
   pull_policy: never
   restart: unless-stopped
-  user: "0:0"
+  user: "${E14_UID:-1000}:${E14_GID:-1000}"
   working_dir: /course
   environment:
     PYTHONPATH: /course/labs/e8e10:/course/labs/e11e12/vendor:/app
@@ -41,6 +41,7 @@ services:
 
   draft:
     <<: *common
+    user: "0:0"
     environment:
       E14_ROLE: draft
       PYTHONDONTWRITEBYTECODE: "1"

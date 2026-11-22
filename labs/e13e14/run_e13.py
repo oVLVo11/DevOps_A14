@@ -1,5 +1,7 @@
 """Run the visible E13 matrix against a pinned request and preserve the evidence."""
 import argparse
+from contextlib import redirect_stdout
+import hashlib
 import json
 import sys
 import threading
@@ -22,12 +24,12 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def http(url, body=None):
+def http(url, body=None, *, raw=False):
     request = urllib.request.Request(url, data=None if body is None else json.dumps(body).encode(),
                                      headers={'Content-Type': 'application/json'})
     try:
         with urllib.request.urlopen(request, timeout=15) as response:
-            return response.status, json.load(response), dict(response.headers)
+            return response.status, response.read() if raw else json.load(response), dict(response.headers)
     except urllib.error.HTTPError as error:
         return error.code, json.load(error), dict(error.headers)
 
@@ -54,9 +56,10 @@ def check_idempotency(original, output):
             save(output / 'final-state.json', current)
             require(current[0] == 200 and current[1]['status'] == 'SUCCEEDED', 'API job did not succeed')
             artifacts = http(f'{url}/{job}/artifacts')
-            report = http(f'{url}/{job}/files/incremental-check.json')
+            report = http(f'{url}/{job}/files/incremental-check.json', raw=True)
             sha = digest(output / 'jobs' / job / 'evidence/incremental-check.json')
-            require(artifacts[0] == report[0] == 200 and report[2].get('X-Content-SHA256') == sha, 'API report hash mismatch')
+            require(artifacts[0] == report[0] == 200 and report[2].get('X-Content-SHA256') == sha
+                    and hashlib.sha256(report[1]).hexdigest() == sha, 'API report hash mismatch')
             save(output / 'download-verification.json', {'job_id': job, 'sha256': sha, 'headers': report[2]})
             require(list(server.jobs.jobs) == [job], 'Duplicate job was created')
         finally:
@@ -99,9 +102,11 @@ def run(request, output):
     stale = input_area / 'stale.json'
     save(stale, {**handoff, 'commit': request['base'],
                  'data': {**handoff['data'], 'commit': request['base']}})
+    (output / 'stale-input.json').write_bytes(stale.read_bytes())
     reject('C2', dict(b_request, fixed_report=str(stale), fixed_report_sha256=digest(stale)), 'STALE_REPORT')
     changed = input_area / 'changed.json'
     changed.write_bytes(handoff_path.read_bytes() + b'\n')
+    (output / 'changed-input.json').write_bytes(changed.read_bytes())
     reject('C3', dict(b_request, fixed_report=str(changed)), 'ARTIFACT_HASH_MISMATCH')
     record('C3', original_sha256=digest(handoff_path), changed_sha256=digest(changed),
            error_code='ARTIFACT_HASH_MISMATCH')
@@ -142,7 +147,6 @@ def run(request, output):
     case6.mkdir()
     probe = case6 / 'probe.log'
     probe.write_text('api_' + 'key = "s' + 'k-' + 'fictitiousE13' * 2 + '"\n', encoding='utf-8')
-    from contextlib import redirect_stdout
     with (case6 / 'hit-scan.txt').open('w', encoding='utf-8') as log, redirect_stdout(log):
         hit = scan_logs([str(probe)])
     probe.write_text('probe completed; clean content\n', encoding='utf-8')

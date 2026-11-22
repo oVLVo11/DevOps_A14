@@ -2,7 +2,6 @@
 import argparse
 import hashlib
 import json
-import re
 import subprocess
 import sys
 import urllib.error
