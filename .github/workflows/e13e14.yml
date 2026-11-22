@@ -1,0 +1,103 @@
+name: E13-E14 integration gate
+on:
+  push:
+    branches: ['**/e13-e14']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Contract regressions and Compose configuration
+        run: |
+          set -euo pipefail
+          python3 -m compileall -q labs/e11e12 labs/e13e14 run_e11e12.py
+          python3 -m unittest discover -s labs/e11e12 -p 'test_*.py' -v
+          python3 -m unittest discover -s labs/e13e14/tests -p 'test_*.py' -v
+          python3 validator/validate.py --suite
+          E14_ROOT="$PWD" E14_IMAGE=course-e11e12:ci docker compose -f labs/e13e14/compose.yaml config --quiet
+          python3 scripts/secret_scan.py . --history
+
+  four-services:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      E14_IMAGE: course-e11e12:241880223
+      COMPOSE_PROJECT_NAME: a14-e14-ci
+      COMPOSE_FILE: labs/e13e14/compose.yaml
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Build the pinned role image and prepare inputs
+        run: |
+          set -euo pipefail
+          echo "E14_ROOT=$PWD" >> "$GITHUB_ENV"
+          mkdir -p work
+          git config --local user.name 241880223
+          git config --local user.email ci@example.invalid
+          python3 run_e11e12.py build 2>&1 | tee work/role-image-build.log
+          docker image inspect --format '{{.Id}}' "$E14_IMAGE" > work/role-image-id.txt
+          python3 scripts/secret_scan.py . --history --image "$E14_IMAGE" | tee work/source-image-scan.txt
+          python3 run_e11e12.py prepare
+          python3 labs/e13e14/prepare_a14.py
+      - name: Run E13 visible matrix on A14 input
+        run: |
+          set -euo pipefail
+          docker run --rm --network bridge --cap-add SYS_PTRACE \
+            -v "$PWD:/course" -v /var/run/docker.sock:/var/run/docker.sock -w /course "$E14_IMAGE" \
+            python3 labs/e13e14/run_e13.py --request data/e13-a14/e12.json --out work/e13-a14-ci \
+            2>&1 | tee work/e13-console.log
+          python3 scripts/secret_scan.py . --image "$(python3 -c 'import json; print(json.load(open("work/e13-a14-ci/C1-b/draft-build/result.json"))["attempts"][-1]["image_id"])')" | tee work/draft-image-scan.txt
+      - name: Run E14 fixed sample, A14 project, timeout and recovery
+        run: |
+          set -euo pipefail
+          docker compose up -d --wait
+          docker compose ps --format json > work/e14-compose-health.json
+          docker compose config > work/e14-compose-resolved.yaml
+          python3 labs/e13e14/orchestrate.py --request data/integration-sample/e12.json --out work/e14-fixed
+          python3 labs/e13e14/orchestrate.py --request data/e13-a14/e12.json --out work/e14-a14
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          src = Path('data/e13-a14/e12.json')
+          dst = Path('data/e13-a14/e12-timeout.json')
+          dst.write_text(json.dumps(dict(json.loads(src.read_text()), build_timeout=.01)) + '\n')
+          PY
+          set +e
+          python3 labs/e13e14/orchestrate.py --request data/e13-a14/e12-timeout.json --out work/e14-timeout
+          code=$?
+          set -e
+          echo "$code" > work/e14-timeout-exit.txt
+          test "$code" -eq 1
+          python3 labs/e13e14/orchestrate.py --request data/e13-a14/e12.json --out work/e14-recovery
+          docker compose logs --no-color > work/e14-services.log
+          python3 labs/e13e14/verify_e14.py --fixed work/e14-fixed --a14 work/e14-a14 \
+            --timeout work/e14-timeout --recovery work/e14-recovery --logs work/e14-services.log \
+            | tee work/e14-verification.json
+      - name: Collect logs, scan runtime evidence and stop this Compose project
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          trap 'docker compose down' EXIT
+          docker compose logs --no-color > work/e14-services.log
+          python3 labs/e13e14/scan_runtime_logs.py work | tee work/runtime-scan.txt
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: e13e14-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            work/
+            !work/**/.git/**
+          include-hidden-files: true
+          retention-days: 14

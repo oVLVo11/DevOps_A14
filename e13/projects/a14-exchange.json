@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/oVLVo11/DevOps_A14.git",
+  "project_path": "e13/projects/a14",
+  "base": "6723e99c0f155db19f655e8d3b47367dc7ed4d47",
+  "target": "ce25b2025174fc716d585fafe2d98e29810350d9",
+  "build": "make clean && make && make test",
+  "run": "./app",
+  "base_output": "12",
+  "target_output": "15",
+  "expected_missing": ["main.o", "adjustment.h"],
+  "header_probe": {
+    "file": "adjustment.h",
+    "before": "#define ADJUSTMENT 3",
+    "after": "#define ADJUSTMENT 6",
+    "expected_output": "18"
+  }
+}
