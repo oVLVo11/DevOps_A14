@@ -126,7 +126,12 @@ def run(request, output):
     project = output / 'C1-a/target-project' / request.get('project_path', '.')
     before = (project / 'Makefile').read_bytes()
     source = Path(request['repo'])
-    head = command(['git','rev-parse','HEAD'], source, case5 / 'source-before.log')
+    commit_arg = f"{request['target']}^{{commit}}"
+    tree_arg = f"{request['target']}^{{tree}}"
+    commit_before = command(['git', 'rev-parse', '--verify', commit_arg], source,
+                            case5 / 'source-commit-before.log')
+    tree_before = command(['git', 'rev-parse', '--verify', tree_arg], source,
+                          case5 / 'source-tree-before.log')
     good = output / 'C1-b/candidate.patch'
     wrong = case5 / 'wrong.patch'
     lines = good.read_text().splitlines(keepends=True)
@@ -135,13 +140,18 @@ def run(request, output):
     wrong.write_text(''.join(lines), encoding='utf-8')
     config = {'expected_output': request.get('expected_output','1'), 'header_probe': request.get('header_probe')}
     verdict = validate(project, wrong, case5 / 'wrong', **config)
-    after_head = command(['git','rev-parse','HEAD'], source, case5 / 'source-after.log')
+    commit_after = command(['git', 'rev-parse', '--verify', commit_arg], source,
+                           case5 / 'source-commit-after.log')
+    tree_after = command(['git', 'rev-parse', '--verify', tree_arg], source,
+                         case5 / 'source-tree-after.log')
     require(not verdict['accepted'] and verdict['rollback'] and verdict['source_unchanged']
-            and head == after_head and before == (project / 'Makefile').read_bytes()
+            and commit_before == commit_after == request['target']
+            and tree_before == tree_after and before == (project / 'Makefile').read_bytes()
             and verdict['checks'].get('patch_applies') and not verdict['checks'].get('build'),
             'C5 wrong patch did not fail the build or left modifications')
-    record('C5', rollback=True, source_head_before=head, source_head_after=after_head,
-           source_target=request['target'], patch_sha256=digest(wrong))
+    record('C5', rollback=True, source_commit_before=commit_before,
+           source_commit_after=commit_after, source_tree_before=tree_before,
+           source_tree_after=tree_after, patch_sha256=digest(wrong))
 
     case6 = output / 'C6'
     case6.mkdir()
