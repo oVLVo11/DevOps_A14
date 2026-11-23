@@ -1,0 +1,15 @@
+{
+  "source_repository": "https://github.com/dInG-yAnWen/DevOPs.git",
+  "bundle_sha256": "8d43cd7767c7488965644ae4aa7411b02719f5d16c7de42afdfdbf580dd3e558",
+  "project_path": "e13/projects/b14",
+  "base": "db7ad8c0df5f8801b4147f3d204610bd6400bd4b",
+  "target": "785f54324c915e4c4987cafea46a5ab0714be167",
+  "candidate_sha256": "0b88f21781db7625d043bb66ef2aeb9f0421429ea560d9daa975a507fd45bc3b",
+  "expected_output": "1",
+  "header_probe": {
+    "file": "alert_policy.h",
+    "before": "#define B14_ALERT_THRESHOLD 50",
+    "after": "#define B14_ALERT_THRESHOLD 40",
+    "expected_output": "2"
+  }
+}

@@ -1,0 +1,80 @@
+name: E13 cross-test gate
+on:
+  push:
+    branches: ['**/e13-review']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Contract regressions and source scan
+        run: |
+          set -euo pipefail
+          python3 -m compileall -q labs/e11e12 labs/e13e14 run_e11e12.py
+          python3 -m unittest discover -s labs/e11e12 -p 'test_*.py' -v
+          python3 -m unittest discover -s labs/e13e14/tests -p 'test_*.py' -v
+          python3 validator/validate.py --suite
+          python3 scripts/secret_scan.py . --history
+
+  visible-matrix:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Build role image and pin A14 input
+        run: |
+          set -euo pipefail
+          git config --local user.name 241880223
+          git config --local user.email ci@example.invalid
+          mkdir -p work
+          python3 run_e11e12.py build 2>&1 | tee work/role-image-build.log
+          docker image inspect --format '{{.Id}}' course-e11e12:241880223 > work/role-image-id.txt
+          python3 scripts/secret_scan.py . --history --image course-e11e12:241880223 | tee work/source-image-scan.txt
+          python3 labs/e13e14/prepare_a14.py
+      - name: Run and inspect E13 C1-C8
+        run: |
+          set -euo pipefail
+          docker run --rm --init --network bridge --cap-add SYS_PTRACE \
+            --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" -e HOME=/tmp \
+            -v "$PWD:/course" -v /var/run/docker.sock:/var/run/docker.sock -w /course \
+            course-e11e12:241880223 \
+            python3 labs/e13e14/run_e13.py --request data/e13-a14/e12.json --out work/e13-a14-ci \
+            2>&1 | tee work/e13-console.log
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root = Path('work/e13-a14-ci')
+          matrix = json.loads((root/'matrix.json').read_text())
+          assert set(matrix) == {f'C{i}' for i in range(1, 9)}
+          record = json.loads((root/'C6/probe-hashes.json').read_text())
+          assert record == {k: matrix['C6'][k] for k in ('before_sha256', 'after_sha256')}
+          assert record['before_sha256'] != record['after_sha256']
+          assert hashlib.sha256((root/'C6/probe.log').read_bytes()).hexdigest() == record['after_sha256']
+          print('E13 C1-C8 and C6 hashes: PASS')
+          PY
+      - name: Scan runtime evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          python3 labs/e13e14/scan_runtime_logs.py work | tee work/runtime-scan.txt
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: e13-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            work/
+            !work/**/.git/**
+          include-hidden-files: true
+          retention-days: 14
