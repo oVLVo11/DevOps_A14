@@ -1,0 +1,6 @@
+rm -f main.o helper.o app app.exe
+gcc -O0 -Wall -Wextra -Werror -std=c99 -c main.c -o main.o
+gcc -O0 -Wall -Wextra -Werror -std=c99 -c helper.c -o helper.o
+gcc main.o helper.o -o app
+PASS: exact output 1, exit 0
+1

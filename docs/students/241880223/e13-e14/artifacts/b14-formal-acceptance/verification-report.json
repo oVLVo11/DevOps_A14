@@ -1,0 +1,41 @@
+{
+  "receipt_zip_sha256": "056b74f61156d0a9c6c2c2898c5b001cf6f72c97dde1412d31f1b198a35af79f",
+  "root_manifest_entries_verified": 311,
+  "project_checks": {
+    "a14": {
+      "nested_manifest_entries_verified": 153,
+      "job_artifacts_verified": 119,
+      "report_and_source_bytes_match_a14_originals": true,
+      "target_source_hashes_match": true,
+      "configuration_id_recomputed": true,
+      "job_trace_patch_probe_recheck_consistent": true,
+      "remaining_missing": 0,
+      "image_id_consistent_across_receipt_and_draft": true,
+      "image_archive_present": true,
+      "image_archive_sha256_verified": true,
+      "image_archive_oci_blobs_verified": true,
+      "local_docker_loaded_config_digest_verified": true,
+      "local_docker_clean_build_test_run_verified": true,
+      "image_archive_expected_sha256": "bb3e1f46979e344b1ba043800e69d2d1b82bb8dcdd1b8452e3bfa22f7700ab61",
+      "image_archive_expected_bytes": 156651806
+    },
+    "b14": {
+      "nested_manifest_entries_verified": 154,
+      "job_artifacts_verified": 126,
+      "report_and_source_bytes_match_a14_originals": true,
+      "target_source_hashes_match": true,
+      "configuration_id_recomputed": true,
+      "job_trace_patch_probe_recheck_consistent": true,
+      "remaining_missing": 0,
+      "image_id_consistent_across_receipt_and_draft": true,
+      "image_archive_present": true,
+      "image_archive_sha256_verified": true,
+      "image_archive_oci_blobs_verified": true,
+      "local_docker_loaded_config_digest_verified": true,
+      "local_docker_clean_build_test_run_verified": true,
+      "image_archive_expected_sha256": "676a6433759e9120ae3976ac42fa347bbb07a36820facc411b76bf58af119b35",
+      "image_archive_expected_bytes": 154420944
+    }
+  },
+  "status": "COMPLETE"
+}
