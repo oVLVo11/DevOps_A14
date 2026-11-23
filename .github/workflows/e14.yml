@@ -35,10 +35,10 @@ jobs:
           python3 scripts/secret_scan.py . --history --image "$E14_IMAGE" | tee work/source-image-scan.txt
           python3 run_e11e12.py prepare
           python3 labs/e13e14/prepare_a14.py
-          docker compose config --quiet
       - name: Four-service fixed and A14 projects, timeout and recovery
         run: |
           set -euo pipefail
+          docker compose config --quiet
           docker compose up -d --wait
           docker compose ps --format json > work/e14-compose-health.json
           docker compose config > work/e14-compose-resolved.yaml
