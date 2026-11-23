@@ -15,3 +15,6 @@ requirements*.lock text eol=lf
 
 # Selected E4 evidence binds exact bytes when it is published later.
 /e4/evidence/** -text
+
+# E13 sign-off evidence includes raw Docker stdout/stderr and byte-bound JSON.
+/docs/students/241880223/e13-e14/artifacts/b14-formal-acceptance/** -text

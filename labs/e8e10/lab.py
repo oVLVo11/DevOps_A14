@@ -94,7 +94,11 @@ def patch(p,report):
     diff=''.join(difflib.unified_diff(original.splitlines(True),changed.splitlines(True),fromfile='a/Makefile',tofile='b/Makefile'))
     return diff,edits
 
-def validate(p, patchfile, evidence, fail_test=False):
+def validate(p, patchfile, evidence, fail_test=False, *, expected_output='1',
+             header_probe=None, apply=True):
+    if header_probe is None:
+        header_probe = {'file': 'config.h', 'before': '#define VALUE 1',
+                        'after': '#define VALUE 2', 'expected_output': '2'}
     evidence.mkdir(parents=True); before=(p/'Makefile').read_bytes()
     sandbox=evidence/'sandbox'; shutil.copytree(p,sandbox,ignore=shutil.ignore_patterns('.git','*.o','app'))
     run(['git','init','-b','main'],sandbox)
@@ -106,17 +110,32 @@ def validate(p, patchfile, evidence, fail_test=False):
         run(['git','apply','--check',str(patchfile.resolve())],sandbox); checks['patch_applies']=True
         run(['git','apply',str(patchfile.resolve())],sandbox)
         log=run(['make','clean'],sandbox)+run(['make','app'],sandbox);(evidence/'build.log').write_text(log);checks['build']=True
-        output=run(['./app'],sandbox).strip(); checks['test']=output==('99' if fail_test else '1')
+        output=run(['./app'],sandbox).strip(); checks['test']=output==('99' if fail_test else expected_output)
+        (evidence/'verify.log').write_text(output+'\n', encoding='utf-8')
         # Real header-change build checks the originally broken incremental behavior.
-        time.sleep(1.05); (sandbox/'config.h').write_text('#define VALUE 2\n')
+        name = header_probe['file']
+        header = sandbox / name
+        if not re.fullmatch(r'[\w-]+\.h', name) or not header.is_file() or header.is_symlink():
+            raise ValueError('INVALID_HEADER_PROBE')
+        lines = header.read_text(encoding='utf-8').splitlines(keepends=True)
+        matches = [i for i, line in enumerate(lines)
+                   if line.rstrip('\r\n') == header_probe['before']]
+        replacement = header_probe['after']
+        if len(matches) != 1 or not replacement or '\n' in replacement or '\r' in replacement:
+            raise ValueError('INVALID_HEADER_PROBE')
+        time.sleep(1.05)
+        lines[matches[0]] = replacement + '\n'
+        header.write_text(''.join(lines), encoding='utf-8')
         (evidence/'incremental.log').write_text(run(['make','app'],sandbox))
-        checks['header_change']=run(['./app'],sandbox).strip()=='2'
+        incremental = run(['./app'],sandbox).strip()
+        (evidence/'incremental-verify.log').write_text(incremental+'\n', encoding='utf-8')
+        checks['header_change']=incremental==header_probe['expected_output'] and incremental!=output
         recheck=scan(sandbox); save(evidence/'recheck.json',recheck)
         checks['no_missing']=not any(f['type']=='MISSING' for f in recheck['findings'])
     except (ValueError,subprocess.TimeoutExpired) as ex: error=str(ex)
     accepted=bool(checks) and all(checks.values()) and error is None
     # Source remains untouched until all checks pass. Evidence sandbox is retained.
-    if accepted: (p/'Makefile').write_bytes((sandbox/'Makefile').read_bytes())
+    if accepted and apply: (p/'Makefile').write_bytes((sandbox/'Makefile').read_bytes())
     unchanged=(p/'Makefile').read_bytes()==before
     result={'accepted':accepted,'checks':checks,'error':error,'source_unchanged':unchanged,'rollback':not accepted and unchanged}
     save(evidence/'validation.json',result);return result
