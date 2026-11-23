@@ -1,0 +1,81 @@
+name: E14 candidate integration
+on:
+  push:
+    branches: ['**/e14-candidate']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  four-services:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      E14_IMAGE: course-e11e12:241880223
+      COMPOSE_PROJECT_NAME: a14-e14-ci
+      COMPOSE_FILE: labs/e13e14/compose.yaml
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Build pinned role image and prepare fixed and A14 inputs
+        run: |
+          set -euo pipefail
+          echo "E14_ROOT=$PWD" >> "$GITHUB_ENV"
+          echo "E14_UID=$(id -u)" >> "$GITHUB_ENV"
+          echo "E14_GID=$(id -g)" >> "$GITHUB_ENV"
+          git config --local user.name 241880223
+          git config --local user.email ci@example.invalid
+          mkdir -p work
+          python3 -m compileall -q labs/e13e14
+          python3 run_e11e12.py build 2>&1 | tee work/role-image-build.log
+          docker image inspect --format '{{.Id}}' "$E14_IMAGE" > work/role-image-id.txt
+          python3 scripts/secret_scan.py . --history --image "$E14_IMAGE" | tee work/source-image-scan.txt
+          python3 run_e11e12.py prepare
+          python3 labs/e13e14/prepare_a14.py
+          docker compose config --quiet
+      - name: Four-service fixed and A14 projects, timeout and recovery
+        run: |
+          set -euo pipefail
+          docker compose up -d --wait
+          docker compose ps --format json > work/e14-compose-health.json
+          docker compose config > work/e14-compose-resolved.yaml
+          python3 labs/e13e14/orchestrate.py --request data/integration-sample/e12.json --out work/e14-fixed
+          python3 labs/e13e14/orchestrate.py --request data/e13-a14/e12.json --out work/e14-a14
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          src = Path('data/e13-a14/e12.json')
+          dst = Path('data/e13-a14/e12-timeout.json')
+          dst.write_text(json.dumps(dict(json.loads(src.read_text()), build_timeout=.01)) + '\n')
+          PY
+          set +e
+          python3 labs/e13e14/orchestrate.py --request data/e13-a14/e12-timeout.json --out work/e14-timeout
+          code=$?
+          set -e
+          echo "$code" > work/e14-timeout-exit.txt
+          test "$code" -eq 1
+          python3 labs/e13e14/orchestrate.py --request data/e13-a14/e12.json --out work/e14-recovery
+          docker compose logs --no-color > work/e14-services.log
+          python3 labs/e13e14/verify_e14.py --fixed work/e14-fixed --a14 work/e14-a14 \
+            --timeout work/e14-timeout --recovery work/e14-recovery --logs work/e14-services.log \
+            | tee work/e14-verification.json
+      - name: Collect logs and scan runtime evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p work
+          trap 'docker compose down' EXIT
+          docker compose logs --no-color > work/e14-services.log
+          python3 labs/e13e14/scan_runtime_logs.py work | tee work/runtime-scan.txt
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: e14-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            work/
+            !work/**/.git/**
+          include-hidden-files: true
+          retention-days: 14
